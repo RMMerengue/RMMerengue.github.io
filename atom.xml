@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-10-20T14:52:44.880Z</updated>
+  <updated>2020-12-01T15:55:45.380Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Notes of Deep Learning Lessons:L4-CNN-Case Studies of CNN</title>
+    <link href="http://example.com/2020/12/01/case-studies-of-cnn/"/>
+    <id>http://example.com/2020/12/01/case-studies-of-cnn/</id>
+    <published>2020-12-01T09:42:28.000Z</published>
+    <updated>2020-12-01T15:55:45.380Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;LeNet&quot;&gt;&lt;a href=&quot;#LeNet&quot; class=&quot;headerlink&quot; title=&quot;LeNet&quot;&gt;&lt;/a&gt;LeNet&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;This paper is written in 1998,peple didn’t really</summary>
+        
+      
+    
+    
+    
+    <category term="Deep Learning" scheme="http://example.com/categories/Deep-Learning/"/>
+    
+    
+    <category term="Paper Notes" scheme="http://example.com/tags/Paper-Notes/"/>
+    
+  </entry>
   
   <entry>
     <title>Markdown使用指南</title>

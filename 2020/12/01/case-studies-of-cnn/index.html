@@ -481,7 +481,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="LeNet"><a href="#LeNet" class="headerlink" title="LeNet"></a>LeNet</h1><ul>
+                <h2 id="LeNet"><a href="#LeNet" class="headerlink" title="LeNet"></a>LeNet</h2><ul>
 <li>This paper is written in 1998,peple didn’t really use <strong>padding</strong> or using <strong>valid convolutions</strong>, so after applying ConV layer, the height and width shrinks.  </li>
 <li>The <strong>architecture</strong> of LeNet is:<pre><code>ConV+pool-&gt;ConV+pool-&gt;FC-&gt;FC-&gt;output  </code></pre>
 </li>
@@ -489,7 +489,7 @@
 <li>Graph Transformer Network(GTN) <strong>isn’t</strong> widely used today</li>
 </ul>
 <hr>
-<h1 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h1><ul>
+<h2 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h2><ul>
 <li>AlexNet has a lot of similarities to LeNet, but much <strong>bigger</strong>.(LeNet has 6w parameters and AlexNet has 6000w parameters).</li>
 <li>AlexNet uses <strong>ReLu</strong> as its activation function.</li>
 <li>Uses <strong>Data augmentation</strong> and <strong>Dropout</strong> to reduce overfitting. The first form of data augmentation consists of <strong>generating image translations</strong> and <strong>horizontal reflections</strong>, the second form of data augmentation consists of <strong>altering the intensities of RGB channels in training images</strong>.</li>
@@ -498,39 +498,35 @@
 <li>It was really this paper that <strong>convinced a lot of CV community</strong> to take a serious look at Deep Learning and <strong>beyond</strong> CV as well.</li>
 </ul>
 <hr>
-<h1 id="VGG"><a href="#VGG" class="headerlink" title="VGG"></a>VGG</h1><ul>
+<h2 id="VGG"><a href="#VGG" class="headerlink" title="VGG"></a>VGG</h2><ul>
 <li>Instead of having so many hyperparameters, VGG uses <strong>a simpler network</strong> focus just on ConV layers(ConV:3<em>3,s=1,same; MAX-POOL:2</em>2,s=2).This really simplified these NN architecture. </li>
 <li>Number of parameters are vary <strong>large</strong>(138 Million).</li>
 <li>This paper reveals the <strong>pattern</strong> of how as you go deeper, making the rate goes down and up <strong>systematic</strong>.</li>
 <li>VGG confirm the importance of <strong>Depth</strong> in visual representations.</li>
 </ul>
 <hr>
-<h1 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h1><ul>
+<h2 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h2><ul>
 <li>In theory, having a deeper Network would help, but in practice, having a plain Network that is very deep means that <strong>your optimization algorithm has a harder training</strong>, and your training error gets worse, ResNet can produce no higher training error than its <strong>shallower counterpart</strong> and help you to solve this problem.</li>
 <li>If the optimal function is closer to <strong>an identity mapping</strong> than to <strong>a zero mapping</strong>, it should be easier for the solver to find the perturbations with reference to <strong>an identity mapping</strong>, than to <strong>learn the function as a new one</strong>.The identy function is easy for residual block to learn since it is easy to get a[L+2] = a[L] because of this skip connection.</li>
 <li>Assuming z[L+2] and a[L] have the same dimension, so actually this short-cut because same ConV preserves dimensions.</li>
 <li>This paper focuses on <strong>the behavior of extremely deep Networks</strong>, not on pushing the state-of-art result, so uses simple architectures.  </li>
 </ul>
 <hr>
-<h1 id="Network-in-Network"><a href="#Network-in-Network" class="headerlink" title="Network in Network"></a>Network in Network</h1><ul>
+<h2 id="Network-in-Network"><a href="#Network-in-Network" class="headerlink" title="Network in Network"></a>Network in Network</h2><ul>
 <li>With enhanced local modeling via the <strong>micro Network</strong>, we are able to utilize <strong>global average pooling</strong> over feature maps in the classification layer, which is easier to <strong>interpret</strong> and <strong>less prone to overfitting</strong> than traditional FClayers.</li>
 <li>Even though the details of the architecture in this paper aren’t used widely, this idea of a *<em>1</em>1 convolution** or <strong>NIN</strong> idea has been very influential.  </li>
 <li>This paper uses <strong>a micro Network</strong> structure to replace <strong>Generalized Linear Model</strong>(GLM).</li>
 </ul>
 <hr>
-<h1 id="GoogLeNet"><a href="#GoogLeNet" class="headerlink" title="GoogLeNet"></a>GoogLeNet</h1><ul>
+<h2 id="GoogLeNet"><a href="#GoogLeNet" class="headerlink" title="GoogLeNet"></a>GoogLeNet</h2><ul>
 <li>Instead of choosing what filter size you want in ConV layers or pooling layers, you can do them all in the <strong>Inception module</strong>.</li>
 <li>The Inception module uses *<em>1</em>1 ConV layer** to create a <strong>bottleneck layer</strong> to reducing the computational cost signigicantly.  </li>
 <li>The main hallmark of this architecture is the <strong>improved utilization of the computing resources</strong> inside the Network. By a <strong>carefully crafted design</strong>, this paper <strong>increased the depth and width</strong> of the Network while <strong>keeping the computational budget constant</strong>.  </li>
-<li>The most straightforward way of improving the performance of deep Neural Network is by <strong>increasing their size</strong>. This includes both increasing the <strong>depth</strong> - the number of Network levels - as well as its <strong>width</strong>: the number of units at each level. However, this simple solution comes with two major drawbacks:<br>```</li>
+<li>The most straightforward way of improving the performance of deep Neural Network is by <strong>increasing their size</strong>. This includes both increasing the <strong>depth</strong> - the number of Network levels - as well as its <strong>width</strong>: the number of units at each level. However, this simple solution comes with two major drawbacks:<br>1.Bigger size typically means a larger number of parameters, which makes the enlarged Network more prone to overfitting.<br>2.The dramatically increased use of computational resources.<br>A fundamental way of solving both of these issues would be to introduce <strong>sparsity</strong> and <strong>replace the FC layers by sparse ones</strong>, even inside the convolutions.<br>If the <strong>probability distribution</strong> of the dataset is representable by a large, very sparse deep Neural Network, then the optimal Network topology can be constructed <strong>layer after layer</strong> by <strong>analyzing the correlation statistics</strong> of the preceding layer activations and <strong>clustering neurons</strong> with highly correlated outputs.</li>
+<li>The main idea of the <strong>Inception architecture</strong> is to consider how an optimal local sparse structure of a convolutional vision Network can be <strong>approximated</strong> and <strong>covered</strong> by <strong>readily available dense components</strong>.</li>
+<li>The design follows the practical intuition that visual information should be <strong>processed at various scales</strong> and then <strong>aggregated</strong> so that the next stage can abstract features from the diffrent scales simultaneously.</li>
+<li>The function of the branches in GoogLeNet is to take some hidden layers and try to use that to <strong>make a prediction</strong>. It helps ensure that the feature’s computed even in the hidden layers or intermediate layers. This appears to have a <strong>regularizing effect</strong> on the Inception Network and prevent this Network from <strong>overfitting</strong>.</li>
 </ul>
-<p>1.Bigger size typically means a larger number of parameters, which makes the enlarged Network more prone to overfitting.<br>2.The dramatically increased use of computational resources.</p>
-<pre><code>A fundamental way of solving both of these issues would be to introduce **sparsity** and **replace the FC layers by sparse ones**, even inside the convolutions.  
-If the **probability distribution** of the dataset is representable by a large, very sparse deep Neural Network, then the optimal Network topology can be constructed **layer after layer** by **analyzing the correlation statistics** of the preceding layer activations and **clustering neurons** with highly correlated outputs.
-- The main idea of the **Inception architecture** is to consider how an optimal local sparse structure of a convolutional vision Network can be **approximated** and **covered** by **readily available dense components**.
-- The design follows the practical intuition that visual information should be **processed at various scales** and then **aggregated** so that the next stage can abstract features from the diffrent scales simultaneously.
-- The function of the branches in GoogLeNet is to take some hidden layers and try to use that to **make a prediction**. It helps ensure that the feature's computed even in the hidden layers or intermediate layers. This appears to have a **regularizing effect** on the Inception Network and prevent this Network from **overfitting**.
-</code></pre>
 
             </div>
             <hr/>

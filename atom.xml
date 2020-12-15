@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-12-15T01:26:08.100Z</updated>
+  <updated>2020-12-15T01:30:53.341Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,16 +21,15 @@
     <link href="http://example.com/2020/12/14/object-dtection/"/>
     <id>http://example.com/2020/12/14/object-dtection/</id>
     <published>2020-12-14T09:42:28.000Z</published>
-    <updated>2020-12-15T01:26:08.100Z</updated>
+    <updated>2020-12-15T01:30:53.341Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;##OverFeat&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;This paper shows that different task can be learned &lt;strong&gt;simultaneously&lt;/strong&gt; using &lt;strong&gt;a single</summary>
+    <summary type="html">&lt;h2 id=&quot;OverFeat&quot;&gt;&lt;a href=&quot;#OverFeat&quot; class=&quot;headerlink&quot; title=&quot;OverFeat&quot;&gt;&lt;/a&gt;OverFeat&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;This paper shows that different task</summary>
         
       
     

@@ -469,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    691
+                    690
                 </div>
                 
 
@@ -481,8 +481,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>##OverFeat</p>
-<ul>
+                <h2 id="OverFeat"><a href="#OverFeat" class="headerlink" title="OverFeat"></a>OverFeat</h2><ul>
 <li>This paper shows that different task can be learned <strong>simultaneously</strong> using <strong>a single shared network</strong>.</li>
 <li>It is the first to provide a clear explantion <strong>how ConVNets can be used</strong> for <strong>localization</strong> and <strong>detection</strong> for ImageNet data.</li>
 <li><strong>Multi-scale classification</strong> not only ignores some <strong>regions of the image</strong>, but also be <strong>comutationaly redundant</strong> if views <strong>overlap</strong>.</li>
@@ -490,8 +489,7 @@
 <li>The paper also shows a <strong>multi-scale sliding window</strong> approach that can be used for <strong>classification</strong>, <strong>localization</strong> and <strong>detection</strong>.</li>
 </ul>
 <hr>
-<p>##YOLO</p>
-<ul>
+<h2 id="YOLO"><a href="#YOLO" class="headerlink" title="YOLO"></a>YOLO</h2><ul>
 <li>YOLO frame object detection as <strong>a regression problem</strong> to <strong>spatially separated bounding boxes</strong> and <strong>associated class probabilities</strong>.</li>
 <li>A single neural predicts <strong>bounding boxes</strong> and <strong>class probabilities</strong> directly from full images in <strong>one</strong> evaluation.</li>
 <li>Compared to state-of-the-art detectionsystems, YOLO <strong>makes more localization errors</strong> but is <strong>less likely to predict false positives on background</strong>.</li>
@@ -503,8 +501,7 @@
 <li>While YOLO train on a loss function that approximates detection performance, loss function treats errors the same in <strong>small bounding boxes</strong> versus <strong>large bounding boxes</strong>.<strong>A small error in a large box</strong> is generally benign but <strong>a small error in a small box</strong> has a much greater effect on <strong>IoU</strong>.YOLO’s main source of error is incorrect localizations.</li>
 </ol>
 <hr>
-<p>##R-CNN</p>
-<ul>
+<h2 id="R-CNN"><a href="#R-CNN" class="headerlink" title="R-CNN"></a>R-CNN</h2><ul>
 <li>R-CNN consists of three modules:  </li>
 </ul>
 <ol>
@@ -513,8 +510,7 @@
 <li>A set of <strong>class-specific linear SVMs</strong>. </li>
 </ol>
 <hr>
-<p>##Fast R-CNN</p>
-<ul>
+<h2 id="Fast-R-CNN"><a href="#Fast-R-CNN" class="headerlink" title="Fast R-CNN"></a>Fast R-CNN</h2><ul>
 <li>R-CNN has notable drawbacks:  </li>
 </ul>
 <ol>
@@ -539,14 +535,15 @@
 <li>Outputs <strong>four real-valued numbers</strong> for each of the Kobject classes. Each set of 4 values encodes <strong>refined bounding-box positions</strong> for one of the K classes.</li>
 </ol>
 <hr>
-<p>##Faster R-CNN</p>
-<ul>
+<h2 id="Faster-R-CNN"><a href="#Faster-R-CNN" class="headerlink" title="Faster R-CNN"></a>Faster R-CNN</h2><ul>
 <li>The paper introduces a <strong>Region Proposal Network</strong>(<em>RPN</em>) that shares <strong>full-image convolutional features</strong> with the <strong>detection network</strong>, thus enabling nearly <strong>cost-free</strong> region proposals.</li>
 <li>An RPN is <strong>fully convolutional network</strong> that <strong>simultaneously</strong> predicts <strong>object bounds</strong> and <strong>objectness scores at each position</strong>. The RPN is trained <strong>end-to-end</strong> to generate high-quality <strong>region proposals</strong>, which are used by <strong>Fast R-CNN</strong> for detection.</li>
 <li>Faster R-CNN merge <strong>RPN</strong> and <strong>Fast R-CNN</strong> into a single network by <strong>sharing their convolutional features</strong>–using the recently popular terminology of neural networks with <strong>“attention” mechanism</strong>, the RPN component tells the unified network <strong>where to look</strong>.</li>
 </ul>
 <hr>
-<p>##R-CNN, Fast R-CNN and Faster R-CNN<br>####R-CNN:<br><strong>Propose regions</strong> + <strong>classify proposed regions</strong> one at a time. Output <strong>label</strong> + <strong>bounding box</strong><br>####Fast R-CNN:<br><strong>Propose regions</strong>. Use <strong>convolution implementation</strong> of <strong>sliding windows</strong> to <strong>classify</strong> all the proposed regions.<br>####Faster R-CNN:<br>Use <strong>convolutional network</strong> to propose regions.</p>
+<h2 id="R-CNN-Fast-R-CNN-and-Faster-R-CNN"><a href="#R-CNN-Fast-R-CNN-and-Faster-R-CNN" class="headerlink" title="R-CNN, Fast R-CNN and Faster R-CNN"></a>R-CNN, Fast R-CNN and Faster R-CNN</h2><h4 id="R-CNN-1"><a href="#R-CNN-1" class="headerlink" title="R-CNN:"></a>R-CNN:</h4><p><strong>Propose regions</strong> + <strong>classify proposed regions</strong> one at a time. Output <strong>label</strong> + <strong>bounding box</strong></p>
+<h4 id="Fast-R-CNN-1"><a href="#Fast-R-CNN-1" class="headerlink" title="Fast R-CNN:"></a>Fast R-CNN:</h4><p><strong>Propose regions</strong>. Use <strong>convolution implementation</strong> of <strong>sliding windows</strong> to <strong>classify</strong> all the proposed regions.</p>
+<h4 id="Faster-R-CNN-1"><a href="#Faster-R-CNN-1" class="headerlink" title="Faster R-CNN:"></a>Faster R-CNN:</h4><p>Use <strong>convolutional network</strong> to propose regions.</p>
 
             </div>
             <hr/>

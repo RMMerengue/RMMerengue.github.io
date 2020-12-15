@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Notes of Deep Learning Lessons:L4-CNN-Case Studies of CNN, HungryWTY">
+    <meta name="keywords" content="Notes of Deep Learning Lessons:L4-CNN-Obeject Detection, HungryWTY">
     <meta name="description" content="NUIST 20级人工智能学硕">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Notes of Deep Learning Lessons:L4-CNN-Case Studies of CNN | HungryWTY</title>
+    <title>Notes of Deep Learning Lessons:L4-CNN-Obeject Detection | HungryWTY</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Notes of Deep Learning Lessons:L4-CNN-Case Studies of CNN</h1>
+                    <h1 class="description center-align post-title">Notes of Deep Learning Lessons:L4-CNN-Obeject Detection</h1>
                 </div>
             </div>
         </div>
@@ -460,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-12-01
+                    2020-12-14
                 </div>
                 
 
@@ -469,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    842
+                    691
                 </div>
                 
 
@@ -481,52 +481,72 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="LeNet"><a href="#LeNet" class="headerlink" title="LeNet"></a>LeNet</h2><ul>
-<li>This paper is written in 1998,peple didn’t really use <strong>padding</strong> or using <strong>valid convolutions</strong>, so after applying ConV layer, the height and width shrinks.  </li>
-<li>The <strong>architecture</strong> of LeNet is:<pre><code>ConV+pool-&gt;ConV+pool-&gt;FC-&gt;FC-&gt;output  </code></pre>
-</li>
-<li>LeNet uses <strong>sigmoid &amp; tanh</strong>, not <strong>ReLu</strong>.  </li>
-<li>Graph Transformer Network(GTN) <strong>isn’t</strong> widely used today</li>
+                <p>##OverFeat</p>
+<ul>
+<li>This paper shows that different task can be learned <strong>simultaneously</strong> using <strong>a single shared network</strong>.</li>
+<li>It is the first to provide a clear explantion <strong>how ConVNets can be used</strong> for <strong>localization</strong> and <strong>detection</strong> for ImageNet data.</li>
+<li><strong>Multi-scale classification</strong> not only ignores some <strong>regions of the image</strong>, but also be <strong>comutationaly redundant</strong> if views <strong>overlap</strong>.</li>
+<li>While the sliding window approach may be <strong>computationaly prohibitive</strong> for certain types of models, it is <strong>inherently efficient</strong> in the case of ConVNets, this approach yields significantly more views for voting, which increases <strong>robustness</strong> while remaining <strong>computationaly efficient</strong>.</li>
+<li>The paper also shows a <strong>multi-scale sliding window</strong> approach that can be used for <strong>classification</strong>, <strong>localization</strong> and <strong>detection</strong>.</li>
 </ul>
 <hr>
-<h2 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h2><ul>
-<li>AlexNet has a lot of similarities to LeNet, but much <strong>bigger</strong>.(LeNet has 6w parameters and AlexNet has 6000w parameters).</li>
-<li>AlexNet uses <strong>ReLu</strong> as its activation function.</li>
-<li>Uses <strong>Data augmentation</strong> and <strong>Dropout</strong> to reduce overfitting. The first form of data augmentation consists of <strong>generating image translations</strong> and <strong>horizontal reflections</strong>, the second form of data augmentation consists of <strong>altering the intensities of RGB channels in training images</strong>.</li>
-<li>When this paper is written ,GPUs were still a little bit slow, so it had a complicated way of training on <strong>2 GPUs</strong>.</li>
-<li>Local Response Normalization(LRN) emphasized in this paper <strong>isn’t</strong> really used much.</li>
-<li>It was really this paper that <strong>convinced a lot of CV community</strong> to take a serious look at Deep Learning and <strong>beyond</strong> CV as well.</li>
+<p>##YOLO</p>
+<ul>
+<li>YOLO frame object detection as <strong>a regression problem</strong> to <strong>spatially separated bounding boxes</strong> and <strong>associated class probabilities</strong>.</li>
+<li>A single neural predicts <strong>bounding boxes</strong> and <strong>class probabilities</strong> directly from full images in <strong>one</strong> evaluation.</li>
+<li>Compared to state-of-the-art detectionsystems, YOLO <strong>makes more localization errors</strong> but is <strong>less likely to predict false positives on background</strong>.</li>
+<li><strong>Limitations</strong> of YOLO are as follows:  </li>
+</ul>
+<ol>
+<li>YOLO imposes strong <strong>spatial constraints</strong> on bounding box predictions since each grid cell predicts <strong>two boxes</strong> and can only have <strong>one class</strong>. This spatial constraints limits the <strong>number of nearby objects</strong> that our model can predict. YOLO struggles with small objects that <strong>appear in groups</strong>, such as flocks of birds.  </li>
+<li>Since YOLO learns to predict bounding boxes from <strong>data</strong>, it struggles to generalize to objects in <strong>new</strong> or <strong>unusual aspect ratio</strong> or <strong>configurations</strong>.  </li>
+<li>While YOLO train on a loss function that approximates detection performance, loss function treats errors the same in <strong>small bounding boxes</strong> versus <strong>large bounding boxes</strong>.<strong>A small error in a large box</strong> is generally benign but <strong>a small error in a small box</strong> has a much greater effect on <strong>IoU</strong>.YOLO’s main source of error is incorrect localizations.</li>
+</ol>
+<hr>
+<p>##R-CNN</p>
+<ul>
+<li>R-CNN consists of three modules:  </li>
+</ul>
+<ol>
+<li><strong>Generates category-independent region proposals</strong>.These proposal define the set of candidate bounding boxes <strong>available to our detector</strong>.  </li>
+<li>A large convolutional neural network that extracts <strong>a fixed-length feature vector</strong> from each region.  </li>
+<li>A set of <strong>class-specific linear SVMs</strong>. </li>
+</ol>
+<hr>
+<p>##Fast R-CNN</p>
+<ul>
+<li>R-CNN has notable drawbacks:  </li>
+</ul>
+<ol>
+<li>Training is <strong>a multi-stage pipeline</strong>.  </li>
+<li>Training is <strong>expensive</strong> in space and time.  </li>
+<li>Object detection is <strong>slow</strong>.</li>
+</ol>
+<ul>
+<li>Fast R-CNN’s advantages:  </li>
+</ul>
+<ol>
+<li><strong>Higher detection quality(mAP)</strong> than R-CNN.  </li>
+<li>Training is <strong>single-stage</strong>, using a <strong>multi-task loss</strong>.  </li>
+<li>Training can <strong>update all network layers</strong>.  </li>
+<li><strong>No disk storage</strong> is required for <strong>feature caching</strong>.  </li>
+</ol>
+<ul>
+<li>A Fast R-CNN network takes as input <strong>an entire image</strong> and a set of <strong>object proposals</strong>.<br>The network first <strong>processes the whole image</strong> with several <strong>convolutional</strong> and <strong>max pooling layer</strong> to produce a <strong>conV feature map</strong>.<br>Then, for each object proposal a <strong>region of interest</strong> (<em>RoI</em>) pooling layer extracts <strong>fixed-length feature vector</strong> from the feature map.<br>Each feature vector is fed into a sequence of <strong>fully connected</strong> (<em>fc</em>) layers that finally branch into two sibling output layers:  </li>
+</ul>
+<ol>
+<li>Produces <strong>softmax probability</strong> estimates over K object classes plus a catch-all “background” class.  </li>
+<li>Outputs <strong>four real-valued numbers</strong> for each of the Kobject classes. Each set of 4 values encodes <strong>refined bounding-box positions</strong> for one of the K classes.</li>
+</ol>
+<hr>
+<p>##Faster R-CNN</p>
+<ul>
+<li>The paper introduces a <strong>Region Proposal Network</strong>(<em>RPN</em>) that shares <strong>full-image convolutional features</strong> with the <strong>detection network</strong>, thus enabling nearly <strong>cost-free</strong> region proposals.</li>
+<li>An RPN is <strong>fully convolutional network</strong> that <strong>simultaneously</strong> predicts <strong>object bounds</strong> and <strong>objectness scores at each position</strong>. The RPN is trained <strong>end-to-end</strong> to generate high-quality <strong>region proposals</strong>, which are used by <strong>Fast R-CNN</strong> for detection.</li>
+<li>Faster R-CNN merge <strong>RPN</strong> and <strong>Fast R-CNN</strong> into a single network by <strong>sharing their convolutional features</strong>–using the recently popular terminology of neural networks with <strong>“attention” mechanism</strong>, the RPN component tells the unified network <strong>where to look</strong>.</li>
 </ul>
 <hr>
-<h2 id="VGG"><a href="#VGG" class="headerlink" title="VGG"></a>VGG</h2><ul>
-<li>Instead of having so many hyperparameters, VGG uses <strong>a simpler network</strong> focus just on ConV layers(ConV:3<em>3,s=1,same; MAX-POOL:2</em>2,s=2).This really simplified these NN architecture. </li>
-<li>Number of parameters are vary <strong>large</strong>(138 Million).</li>
-<li>This paper reveals the <strong>pattern</strong> of how as you go deeper, making the rate goes down and up <strong>systematic</strong>.</li>
-<li>VGG confirm the importance of <strong>Depth</strong> in visual representations.</li>
-</ul>
-<hr>
-<h2 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h2><ul>
-<li>In theory, having a deeper Network would help, but in practice, having a plain Network that is very deep means that <strong>your optimization algorithm has a harder training</strong>, and your training error gets worse, ResNet can produce no higher training error than its <strong>shallower counterpart</strong> and help you to solve this problem.</li>
-<li>If the optimal function is closer to <strong>an identity mapping</strong> than to <strong>a zero mapping</strong>, it should be easier for the solver to find the perturbations with reference to <strong>an identity mapping</strong>, than to <strong>learn the function as a new one</strong>.The identy function is easy for residual block to learn since it is easy to get a[L+2] = a[L] because of this skip connection.</li>
-<li>Assuming z[L+2] and a[L] have the same dimension, so actually this short-cut because same ConV preserves dimensions.</li>
-<li>This paper focuses on <strong>the behavior of extremely deep Networks</strong>, not on pushing the state-of-art result, so uses simple architectures.  </li>
-</ul>
-<hr>
-<h2 id="Network-in-Network"><a href="#Network-in-Network" class="headerlink" title="Network in Network"></a>Network in Network</h2><ul>
-<li>With enhanced local modeling via the <strong>micro Network</strong>, we are able to utilize <strong>global average pooling</strong> over feature maps in the classification layer, which is easier to <strong>interpret</strong> and <strong>less prone to overfitting</strong> than traditional FClayers.</li>
-<li>Even though the details of the architecture in this paper aren’t used widely, this idea of a *<em>1</em>1 convolution** or <strong>NIN</strong> idea has been very influential.  </li>
-<li>This paper uses <strong>a micro Network</strong> structure to replace <strong>Generalized Linear Model</strong>(GLM).</li>
-</ul>
-<hr>
-<h2 id="GoogLeNet"><a href="#GoogLeNet" class="headerlink" title="GoogLeNet"></a>GoogLeNet</h2><ul>
-<li>Instead of choosing what filter size you want in ConV layers or pooling layers, you can do them all in the <strong>Inception module</strong>.</li>
-<li>The Inception module uses *<em>1</em>1 ConV layer** to create a <strong>bottleneck layer</strong> to reducing the computational cost signigicantly.  </li>
-<li>The main hallmark of this architecture is the <strong>improved utilization of the computing resources</strong> inside the Network. By a <strong>carefully crafted design</strong>, this paper <strong>increased the depth and width</strong> of the Network while <strong>keeping the computational budget constant</strong>.  </li>
-<li>The most straightforward way of improving the performance of deep Neural Network is by <strong>increasing their size</strong>. This includes both increasing the <strong>depth</strong> - the number of Network levels - as well as its <strong>width</strong>: the number of units at each level. However, this simple solution comes with two major drawbacks:<br>1.Bigger size typically means a larger number of parameters, which makes the enlarged Network more prone to overfitting.<br>2.The dramatically increased use of computational resources.<br>A fundamental way of solving both of these issues would be to introduce <strong>sparsity</strong> and <strong>replace the FC layers by sparse ones</strong>, even inside the convolutions.<br>If the <strong>probability distribution</strong> of the dataset is representable by a large, very sparse deep Neural Network, then the optimal Network topology can be constructed <strong>layer after layer</strong> by <strong>analyzing the correlation statistics</strong> of the preceding layer activations and <strong>clustering neurons</strong> with highly correlated outputs.</li>
-<li>The main idea of the <strong>Inception architecture</strong> is to consider how an optimal local sparse structure of a convolutional vision Network can be <strong>approximated</strong> and <strong>covered</strong> by <strong>readily available dense components</strong>.</li>
-<li>The design follows the practical intuition that visual information should be <strong>processed at various scales</strong> and then <strong>aggregated</strong> so that the next stage can abstract features from the diffrent scales simultaneously.</li>
-<li>The function of the branches in GoogLeNet is to take some hidden layers and try to use that to <strong>make a prediction</strong>. It helps ensure that the feature’s computed even in the hidden layers or intermediate layers. This appears to have a <strong>regularizing effect</strong> on the Inception Network and prevent this Network from <strong>overfitting</strong>.</li>
-</ul>
+<p>##R-CNN, Fast R-CNN and Faster R-CNN<br>####R-CNN:<br><strong>Propose regions</strong> + <strong>classify proposed regions</strong> one at a time. Output <strong>label</strong> + <strong>bounding box</strong><br>####Fast R-CNN:<br><strong>Propose regions</strong>. Use <strong>convolution implementation</strong> of <strong>sliding windows</strong> to <strong>classify</strong> all the proposed regions.<br>####Faster R-CNN:<br>Use <strong>convolutional network</strong> to propose regions.</p>
 
             </div>
             <hr/>
@@ -552,7 +572,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/12/01/case-studies-of-cnn/">http://example.com/2020/12/01/case-studies-of-cnn/</a>
+                    <a href="http://example.com/2020/12/14/object-dtection/">http://example.com/2020/12/14/object-dtection/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -759,9 +779,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2020/12/14/object-dtection/">
                     <div class="card-image">
@@ -779,9 +800,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -794,6 +815,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -812,13 +834,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/20/markdown-shi-yong-zhi-nan/">
+                <a href="/2020/12/01/case-studies-of-cnn/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Markdown使用指南">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Notes of Deep Learning Lessons:L4-CNN-Case Studies of CNN">
                         
-                        <span class="card-title">Markdown使用指南</span>
+                        <span class="card-title">Notes of Deep Learning Lessons:L4-CNN-Case Studies of CNN</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -829,14 +851,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Skills/" class="post-category">
-                                    Skills
+                            <a href="/categories/Deep-Learning/" class="post-category">
+                                    Deep Learning
                                 </a>
                             
                             
@@ -846,8 +868,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/Paper-Notes/">
+                        <span class="chip bg-color">Paper Notes</span>
                     </a>
                     
                 </div>

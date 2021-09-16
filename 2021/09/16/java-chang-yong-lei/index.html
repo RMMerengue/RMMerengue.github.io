@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux常用操作, HungryWTY">
+    <meta name="keywords" content="Java常用类, HungryWTY">
     <meta name="description" content="NUIST 20级人工智能学硕">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Linux常用操作 | HungryWTY</title>
+    <title>Java常用类 | HungryWTY</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Linux常用操作</h1>
+                    <h1 class="description center-align post-title">Java常用类</h1>
                 </div>
             </div>
         </div>
@@ -435,8 +435,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
+                            <a href="/tags/Java%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">Java学习</span>
                             </a>
                         
                     </div>
@@ -447,8 +447,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Notes/" class="post-category">
-                                Notes
+                            <a href="/categories/Java/" class="post-category">
+                                Java
                             </a>
                         
                     </div>
@@ -460,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-03-17
+                    2021-09-16
                 </div>
                 
 
@@ -469,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    799
+                    795
                 </div>
                 
 
@@ -481,90 +481,153 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-基本命令"><a href="#1-基本命令" class="headerlink" title="1.基本命令"></a>1.基本命令</h2><h4 id="1-1-关机"><a href="#1-1-关机" class="headerlink" title="1.1 关机"></a>1.1 关机</h4><ul>
-<li>shutdown -h now 立刻关机</li>
-<li>shutdown -h 5 五分钟后关机</li>
-<li>poweroff 立刻关机</li>
-</ul>
-<h4 id="1-2-重启"><a href="#1-2-重启" class="headerlink" title="1.2 重启"></a>1.2 重启</h4><ul>
-<li>shutdown -r now 立刻重启</li>
-<li>shutdown -r 5 五分钟后重启</li>
-<li>reboot 立刻重启</li>
-</ul>
-<h4 id="1-3-帮助命令"><a href="#1-3-帮助命令" class="headerlink" title="1.3 帮助命令"></a>1.3 帮助命令</h4><ul>
-<li><p>–help命令<br>  ifconfig  –help：查看网卡信息</p>
-</li>
-<li><p>man命令（命令说明书）<br>man shutdown<br>注意：man shutdown打开命令说明书之后，使用按键q退出</p>
-</li>
-</ul>
+                <p>##Date类<br>####java.util.Date</p>
+<pre class=" language-java"><code class="language-java">Date d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+d<span class="token punctuation">.</span>toString<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//获取当前时间：Sat Jun 13 21:43:08 CST 2021</span>
+d<span class="token punctuation">.</span>toLocaleString<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//获取当前的时间的本地时间格式2021-6-13 21:43:08</span>
+System<span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//返回自1970-1-1 00：00：00 GMT以来此对象表示的毫秒数:1592056131151</span>
+
+<span class="token comment" spellcheck="true">//常用于计算运行时间</span>
+<span class="token keyword">long</span> startTime <span class="token operator">=</span> System<span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">100000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+<span class="token keyword">long</span> endTime <span class="token operator">=</span> System<span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>endTime<span class="token operator">-</span>startTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//727</span></code></pre>
+<p>####java.sql.Date<br>java.sql.Date为java.util.Date的子类</p>
+<pre class=" language-java"><code class="language-java">Date d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>1592056131151L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+d<span class="token punctuation">.</span>toString<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//获取当前的时间2021-06-13</span>
+
+<span class="token comment" spellcheck="true">//util->sql:</span>
+java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Date date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>1592056131151L<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//创建util.Date对象</span>
+Date date1 <span class="token operator">=</span> <span class="token punctuation">(</span>Date<span class="token punctuation">)</span> date<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//向下转型</span>
+Date date2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>date<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//利用构造器</span>
+
+<span class="token comment" spellcheck="true">//sql->util:</span>
+java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Date date3 <span class="token operator">=</span> d<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//string->sql.Date:</span>
+Date date4 <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token string">"2021-6-13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>####日期转化</p>
+<pre class=" language-java"><code class="language-java">DateFormat df <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span>pattern<span class="token operator">:</span><span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//SimpleDateFormat extends DateFormat(抽象类)</span>
+
+<span class="token comment" spellcheck="true">//String->Date</span>
+<span class="token keyword">try</span><span class="token punctuation">{</span>
+    Date d <span class="token operator">=</span> df<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>sourse<span class="token operator">:</span><span class="token string">"2021-4-6 12:23:54"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>ParseException e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//Sat Apr 06 12:23:54 CST 2021</span>
+
+<span class="token comment" spellcheck="true">//Date->String</span>
+String format <span class="token operator">=</span> df<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>format<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//2021-06-14 14:34:51</span></code></pre>
+<p>####Calendar</p>
+<pre class=" language-java"><code class="language-java">Calendar cal <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GregorianCalendar</span><span class="token punctuation">;</span>
+Calendar cal2 <span class="token operator">=</span> Calendar<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//GregorianCalendar extends Calendar(抽象类)</span>
+
+<span class="token comment" spellcheck="true">//get方法</span>
+cal<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>YEAR<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//2021</span>
+cal<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>MONTH<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//5</span>
+
+<span class="token comment" spellcheck="true">//set方法</span>
+cal<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>YEAR<span class="token punctuation">,</span><span class="token number">1990</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+cal<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>Month<span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//String->Calendar:</span>
+java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>Date date <span class="token operator">=</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>Date<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token string">"2021-4-5"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//java.sql.Date->Calendar:</span>
+cal<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>####LocalDateTime</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//get</span>
+LocalDateTime<span class="token punctuation">.</span><span class="token function">getYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//2021</span>
+LocalDateTime<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//JUNE</span>
+LocalDateTime<span class="token punctuation">.</span><span class="token function">getMonthValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//6</span>
+
+<span class="token comment" spellcheck="true">//with</span>
+LocalDateTime LocalDateTime2 <span class="token operator">=</span> LocalDateTime<span class="token punctuation">.</span><span class="token function">withMonth</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//加减操作</span>
+LocalDateTime LocalDateTime3 <span class="token operator">=</span> LocalDateTime<span class="token punctuation">.</span><span class="token function">plusMonths</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+LocalDateTime LocalDateTime3 <span class="token operator">=</span> LocalDateTime<span class="token punctuation">.</span><span class="token function">minusMonths</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>####DateTimeFormatmatter</p>
+<pre class=" language-java"><code class="language-java">DateTimeFormatmatter df <span class="token operator">=</span> DateTimeFormatmatter<span class="token punctuation">.</span><span class="token function">ofPattern</span><span class="token punctuation">(</span><span class="token string">"yyyy-MM-dd hh:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//LocalDateTime->String:</span>
+LocalDateTime now <span class="token operator">=</span> LocalDateTime<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+String format <span class="token operator">=</span> df<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>now<span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>format<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//2021-06-15 03:22:25</span>
+
+<span class="token comment" spellcheck="true">//String->LocalDateTime</span>
+TemporalAccessow parse <span class="token operator">=</span> df<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>text<span class="token operator">:</span><span class="token string">"2021-06-15 03:22:25"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <hr>
-<h2 id="2-目录操作"><a href="#2-目录操作" class="headerlink" title="2.目录操作"></a>2.目录操作</h2><h4 id="2-1-目录切换"><a href="#2-1-目录切换" class="headerlink" title="2.1 目录切换"></a>2.1 目录切换</h4><ul>
-<li>cd / 切换到根目录</li>
-<li>cd /usr 切换到根目录下的usr目录</li>
-<li>cd ../ 切换到上一级目录 或者  cd ..</li>
-<li>cd ~ 切换到home目录</li>
-<li>cd - 切换到上次访问的目录</li>
-</ul>
-<h4 id="2-2-目录查看"><a href="#2-2-目录查看" class="headerlink" title="2.2 目录查看"></a>2.2 目录查看</h4><ul>
-<li>ls 查看当前目录下的所有目录和文件</li>
-<li>ls -a&nbsp;查看当前目录下的所有目录和文件（包括隐藏的文件）</li>
-<li>ls -l 或 ll 列表查看当前目录下的所有目录和文件（列表查看，显示更多信息）</li>
-<li>ls /dir&nbsp;查看指定目录下的所有目录和文件 &nbsp; 如：ls /usr</li>
-</ul>
-<h4 id="2-3-创建操作"><a href="#2-3-创建操作" class="headerlink" title="2.3 创建操作"></a>2.3 创建操作</h4><ul>
-<li>mkdir aaa 在当前目录下创建一个名为aaa的目录</li>
-<li>mkdir /usr/aaa 在指定目录下创建一个名为aaa的目录</li>
-</ul>
-<h4 id="2-4-删除操作"><a href="#2-4-删除操作" class="headerlink" title="2.4 删除操作"></a>2.4 删除操作</h4><ul>
-<li>rm 文件 删除当前目录下的文件</li>
-<li>rm -f 文件 删除当前目录的的文件（不询问）</li>
-<li>rm -r aaa 递归删除当前目录下的aaa目录</li>
-<li>rm -rf aaa 递归删除当前目录下的aaa目录（不询问）</li>
-<li>rm -rf * 将当前目录下的所有目录和文件全部删除</li>
-<li>rm -rf /* 【慎用】将根目录下的所有文件全部删</li>
-</ul>
-<h4 id="2-5-修改操作"><a href="#2-5-修改操作" class="headerlink" title="2.5 修改操作"></a>2.5 修改操作</h4><ul>
-<li>mv 当前目录 新目录 重命名目录</li>
-<li>mv 目录名称 目录的新位置 剪切目录</li>
-<li>cp -r 目录名称 目录拷贝的目标位置   -r代表递归</li>
-</ul>
-<h4 id="2-5-查找操作"><a href="#2-5-查找操作" class="headerlink" title="2.5 查找操作"></a>2.5 查找操作</h4><ul>
-<li>find 目录 参数 文件名称  </li>
-</ul>
+<p>##Math类   </p>
+<pre class=" language-java"><code class="language-java">Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//生成随机数</span>
+Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">80</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//80 绝对值</span>
+Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span><span class="token number">9.1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//10 向下取整</span>
+Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token number">9.9</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//9 向上取整</span>
+Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span><span class="token number">3.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//4 四舍五入</span>
+Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//6 取最大值</span>
+Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//3 取最小值</span></code></pre>
 <hr>
-<h2 id="3-文件操作"><a href="#3-文件操作" class="headerlink" title="3.文件操作"></a>3.文件操作</h2><h4 id="3-1-新建文件"><a href="#3-1-新建文件" class="headerlink" title="3.1 新建文件"></a>3.1 新建文件</h4><ul>
-<li>touch 文件名</li>
-</ul>
-<h4 id="3-2-修改文件（vi）"><a href="#3-2-修改文件（vi）" class="headerlink" title="3.2 修改文件（vi）"></a>3.2 修改文件（vi）</h4><p>基本上vi可以分为三种状态，分别是<strong>命令模式（command mode）</strong>、<strong>插入模式（Insertmode）</strong>和<strong>底行模式（last line mode）</strong>，各模式的功能区分如下：</p>
-<h5 id="3-2-1-命令行模式-command-mode）"><a href="#3-2-1-命令行模式-command-mode）" class="headerlink" title="3.2.1 命令行模式(command mode）"></a>3.2.1 命令行模式(command mode）</h5><ul>
-<li>i o a 进入编辑模式</li>
-<li>: 进入底行模式</li>
-<li>[n]dd 删除当前行开始的n行</li>
-<li>[n]yy 复制当前行开始的n行</li>
-<li>p 把粘贴板上的内容插入到当前行</li>
-<li>. 执行上一次操作</li>
-<li>u 撤销前一个操作</li>
-<li>Ctrl+f/Ctrl+b 向前、后滚动一个屏幕 </li>
-<li>gg 到文件第一行行首</li>
-<li>G 到文件最后一行行首</li>
-<li>[n]G/[n]gg 到指定行</li>
-<li>gg=G 自动缩进</li>
-<li>/字符 查找字符</li>
-</ul>
-<h5 id="3-2-2-编辑模式（Insert-mode）"><a href="#3-2-2-编辑模式（Insert-mode）" class="headerlink" title="3.2.2 编辑模式（Insert mode）"></a>3.2.2 编辑模式（Insert mode）</h5><ul>
-<li>ESC 退出编辑模式到命令行模式</li>
-</ul>
-<h5 id="3-2-3-底行模式（last-line-mode）"><a href="#3-2-3-底行模式（last-line-mode）" class="headerlink" title="3.2.3 底行模式（last line mode）"></a>3.2.3 底行模式（last line mode）</h5><ul>
-<li>退出编辑：:q</li>
-<li>强制退出：:q!</li>
-<li>保存并退出：:wq</li>
-</ul>
-<hr>
-<h2 id="4-压缩文件操作"><a href="#4-压缩文件操作" class="headerlink" title="4.压缩文件操作"></a>4.压缩文件操作</h2><h4 id="4-1-打包和压缩"><a href="#4-1-打包和压缩" class="headerlink" title="4.1 打包和压缩"></a>4.1 打包和压缩</h4><ul>
-<li>tar -zcvf 打包压缩后的文件名 要打包的文件（z：调用gzip压缩命令进行压缩 c：打包文件 v：显示运行过程 f：指定文件名）</li>
-</ul>
-<h4 id="4-2-解压"><a href="#4-2-解压" class="headerlink" title="4.2 解压"></a>4.2 解压</h4><ul>
-<li>tar -zxvf 解压文件</li>
+<p>##String类<br>####String</p>
+<pre class=" language-java"><code class="language-java">String s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"abcdefghijk"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//字符串的长度</span>
+s<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//字符串是否为空</span>
+s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//b</span>
+s<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//判断s与s1是否相同</span>
+s<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//返回首个不一样的字母的ASCII码的差值</span>
+s<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//截取[3:]</span>
+s<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//截取[3:6)</span>
+s<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token string">"pppp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//连接</span>
+s<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>oldChar<span class="token operator">:</span><span class="token string">'p'</span><span class="token punctuation">,</span>newChar<span class="token string">'q'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//将所有的p换成q</span>
+
+<span class="token comment" spellcheck="true">//按指定方法分裂为数组</span>
+String s3 <span class="token operator">=</span> <span class="token string">"a-b-c-d"</span><span class="token punctuation">;</span>
+String<span class="token punctuation">[</span><span class="token punctuation">]</span> strs <span class="token operator">=</span> s3<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Arrays<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>strs<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//[a,b,c,d]</span>
+
+s<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//转换为大写</span>
+s<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//转换为小写</span>
+
+<span class="token comment" spellcheck="true">//去除首尾空格</span>
+String s4 <span class="token operator">=</span> <span class="token string">"   a b c  "</span><span class="token punctuation">;</span>
+s4<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+String<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//转换为String类型</span></code></pre>
+<p>####StringBuilder</p>
+<pre class=" language-java"><code class="language-java">StringBuilder sb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token string">"abcdefg"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//增</span>
+sb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"hijk"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//删</span>
+sb<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//删除[3，6)上的字符</span>
+sb<span class="token punctuation">.</span><span class="token function">deleteCharAt</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//删除在第6位上的字符</span>
+
+<span class="token comment" spellcheck="true">//改</span>
+sb<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//在下标为3的位置上插入</span>
+sb<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token string">"aaa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//在下标为[3，5)的位置进行替换</span>
+sb<span class="token punctuation">.</span><span class="token function">setCharAt</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//替换下标为3的值</span>
+
+<span class="token comment" spellcheck="true">//查</span>
+sb<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//截取</span>
+sb<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//返回[2，4)，一个新的String</span></code></pre>
+<p>####区别</p>
+<ul>
+<li>String类是不可变类，一旦创建以后，包含在这个对象中的字符序列是不可改变的，直至这个对象销毁</li>
+<li>StringBuffer代表一个字符序列可变的字符串，一旦生成了最终的字符串，调用toString方法将其转变成String</li>
+<li>StringBuilder与StringBuffer类似，效率高，但是线程不安全 </li>
 </ul>
 
             </div>
@@ -591,7 +654,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/03/17/linux-chang-yong-cao-zuo/">http://example.com/2021/03/17/linux-chang-yong-cao-zuo/</a>
+                    <a href="http://example.com/2021/09/16/java-chang-yong-lei/">http://example.com/2021/09/16/java-chang-yong-lei/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -629,8 +692,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
+                                <a href="/tags/Java%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">Java学习</span>
                                 </a>
                             
                         </div>
@@ -802,13 +865,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/09/16/java-chang-yong-lei/">
+                <a href="/2021/09/16/java-chang-yong-lei-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Java常用类">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Java常用类2">
                         
-                        <span class="card-title">Java常用类</span>
+                        <span class="card-title">Java常用类2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -851,13 +914,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/12/14/object-dtection/">
+                <a href="/2021/03/17/linux-chang-yong-cao-zuo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Notes of Deep Learning Lessons:L4-CNN-Obeject Detection">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Linux常用操作">
                         
-                        <span class="card-title">Notes of Deep Learning Lessons:L4-CNN-Obeject Detection</span>
+                        <span class="card-title">Linux常用操作</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -868,14 +931,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Deep-Learning/" class="post-category">
-                                    Deep Learning
+                            <a href="/categories/Notes/" class="post-category">
+                                    Notes
                                 </a>
                             
                             
@@ -885,8 +948,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Paper-Notes/">
-                        <span class="chip bg-color">Paper Notes</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>

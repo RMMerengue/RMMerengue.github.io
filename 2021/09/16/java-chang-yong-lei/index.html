@@ -469,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    795
+                    787
                 </div>
                 
 
@@ -481,8 +481,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>##Date类<br>####java.util.Date</p>
-<pre class=" language-java"><code class="language-java">Date d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <h2 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h2><h4 id="java-util-Date"><a href="#java-util-Date" class="headerlink" title="java.util.Date"></a>java.util.Date</h4><pre class=" language-java"><code class="language-java">Date d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 d<span class="token punctuation">.</span>toString<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//获取当前时间：Sat Jun 13 21:43:08 CST 2021</span>
 d<span class="token punctuation">.</span>toLocaleString<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//获取当前的时间的本地时间格式2021-6-13 21:43:08</span>
@@ -496,7 +495,8 @@ System<span class="token punctuation">.</span><span class="token function">curre
 <span class="token keyword">long</span> endTime <span class="token operator">=</span> System<span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>endTime<span class="token operator">-</span>startTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//727</span></code></pre>
-<p>####java.sql.Date<br>java.sql.Date为java.util.Date的子类</p>
+<hr>
+<h4 id="java-sql-Date"><a href="#java-sql-Date" class="headerlink" title="java.sql.Date"></a>java.sql.Date</h4><p>java.sql.Date为java.util.Date的子类</p>
 <pre class=" language-java"><code class="language-java">Date d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>1592056131151L<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 d<span class="token punctuation">.</span>toString<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//获取当前的时间2021-06-13</span>
@@ -511,8 +511,8 @@ java<span class="token punctuation">.</span>util<span class="token punctuation">
 
 <span class="token comment" spellcheck="true">//string->sql.Date:</span>
 Date date4 <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token string">"2021-6-13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>####日期转化</p>
-<pre class=" language-java"><code class="language-java">DateFormat df <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span>pattern<span class="token operator">:</span><span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<hr>
+<h4 id="日期转化"><a href="#日期转化" class="headerlink" title="日期转化"></a>日期转化</h4><pre class=" language-java"><code class="language-java">DateFormat df <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span>pattern<span class="token operator">:</span><span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//SimpleDateFormat extends DateFormat(抽象类)</span>
 
 <span class="token comment" spellcheck="true">//String->Date</span>
@@ -527,8 +527,8 @@ Date date4 <span class="token operator">=</span> Date<span class="token punctuat
 <span class="token comment" spellcheck="true">//Date->String</span>
 String format <span class="token operator">=</span> df<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>format<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//2021-06-14 14:34:51</span></code></pre>
-<p>####Calendar</p>
-<pre class=" language-java"><code class="language-java">Calendar cal <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GregorianCalendar</span><span class="token punctuation">;</span>
+<hr>
+<h4 id="Calendar"><a href="#Calendar" class="headerlink" title="Calendar"></a>Calendar</h4><pre class=" language-java"><code class="language-java">Calendar cal <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GregorianCalendar</span><span class="token punctuation">;</span>
 Calendar cal2 <span class="token operator">=</span> Calendar<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//GregorianCalendar extends Calendar(抽象类)</span>
 
@@ -545,8 +545,8 @@ java<span class="token punctuation">.</span>sql<span class="token punctuation">.
 
 <span class="token comment" spellcheck="true">//java.sql.Date->Calendar:</span>
 cal<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>####LocalDateTime</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//get</span>
+<hr>
+<h4 id="LocalDateTime"><a href="#LocalDateTime" class="headerlink" title="LocalDateTime"></a>LocalDateTime</h4><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//get</span>
 LocalDateTime<span class="token punctuation">.</span><span class="token function">getYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//2021</span>
 LocalDateTime<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//JUNE</span>
 LocalDateTime<span class="token punctuation">.</span><span class="token function">getMonthValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//6</span>
@@ -557,8 +557,8 @@ LocalDateTime LocalDateTime2 <span class="token operator">=</span> LocalDateTime
 <span class="token comment" spellcheck="true">//加减操作</span>
 LocalDateTime LocalDateTime3 <span class="token operator">=</span> LocalDateTime<span class="token punctuation">.</span><span class="token function">plusMonths</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 LocalDateTime LocalDateTime3 <span class="token operator">=</span> LocalDateTime<span class="token punctuation">.</span><span class="token function">minusMonths</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>####DateTimeFormatmatter</p>
-<pre class=" language-java"><code class="language-java">DateTimeFormatmatter df <span class="token operator">=</span> DateTimeFormatmatter<span class="token punctuation">.</span><span class="token function">ofPattern</span><span class="token punctuation">(</span><span class="token string">"yyyy-MM-dd hh:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<hr>
+<h4 id="DateTimeFormatmatter"><a href="#DateTimeFormatmatter" class="headerlink" title="DateTimeFormatmatter"></a>DateTimeFormatmatter</h4><pre class=" language-java"><code class="language-java">DateTimeFormatmatter df <span class="token operator">=</span> DateTimeFormatmatter<span class="token punctuation">.</span><span class="token function">ofPattern</span><span class="token punctuation">(</span><span class="token string">"yyyy-MM-dd hh:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">//LocalDateTime->String:</span>
 LocalDateTime now <span class="token operator">=</span> LocalDateTime<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -568,8 +568,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <span class="token comment" spellcheck="true">//String->LocalDateTime</span>
 TemporalAccessow parse <span class="token operator">=</span> df<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>text<span class="token operator">:</span><span class="token string">"2021-06-15 03:22:25"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <hr>
-<p>##Math类   </p>
-<pre class=" language-java"><code class="language-java">Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//生成随机数</span>
+<h2 id="Math类"><a href="#Math类" class="headerlink" title="Math类"></a>Math类</h2><pre class=" language-java"><code class="language-java">Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//生成随机数</span>
 Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">80</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//80 绝对值</span>
 Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span><span class="token number">9.1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//10 向下取整</span>
 Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token number">9.9</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//9 向上取整</span>
@@ -577,8 +576,7 @@ Math<span class="token punctuation">.</span><span class="token function">round</
 Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//6 取最大值</span>
 Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//3 取最小值</span></code></pre>
 <hr>
-<p>##String类<br>####String</p>
-<pre class=" language-java"><code class="language-java">String s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"abcdefghijk"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h2 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h2><h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><pre class=" language-java"><code class="language-java">String s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"abcdefghijk"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//字符串的长度</span>
 s<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//字符串是否为空</span>
@@ -603,8 +601,8 @@ String s4 <span class="token operator">=</span> <span class="token string">"   a
 s4<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 String<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//转换为String类型</span></code></pre>
-<p>####StringBuilder</p>
-<pre class=" language-java"><code class="language-java">StringBuilder sb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token string">"abcdefg"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<hr>
+<h4 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h4><pre class=" language-java"><code class="language-java">StringBuilder sb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token string">"abcdefg"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">//增</span>
 sb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"hijk"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -623,8 +621,8 @@ sb<span class="token punctuation">.</span><span class="token function">charAt</s
 
 <span class="token comment" spellcheck="true">//截取</span>
 sb<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//返回[2，4)，一个新的String</span></code></pre>
-<p>####区别</p>
-<ul>
+<hr>
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><ul>
 <li>String类是不可变类，一旦创建以后，包含在这个对象中的字符序列是不可改变的，直至这个对象销毁</li>
 <li>StringBuffer代表一个字符序列可变的字符串，一旦生成了最终的字符串，调用toString方法将其转变成String</li>
 <li>StringBuilder与StringBuffer类似，效率高，但是线程不安全 </li>
@@ -861,18 +859,17 @@ sb<span class="token punctuation">.</span><span class="token function">substring
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/09/16/java-chang-yong-lei/">
+                <a href="/2021/09/16/java-chang-yong-lei-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Java常用类">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Java常用类2">
                         
-                        <span class="card-title">Java常用类</span>
+                        <span class="card-title">Java常用类2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -882,9 +879,9 @@ sb<span class="token punctuation">.</span><span class="token function">substring
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-16
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-16
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -897,7 +894,6 @@ sb<span class="token punctuation">.</span><span class="token function">substring
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -916,13 +912,13 @@ sb<span class="token punctuation">.</span><span class="token function">substring
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/16/java-chang-yong-lei-2/">
+                <a href="/2021/03/17/linux-chang-yong-cao-zuo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Java常用类2">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Linux常用操作">
                         
-                        <span class="card-title">Java常用类2</span>
+                        <span class="card-title">Linux常用操作</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -933,14 +929,14 @@ sb<span class="token punctuation">.</span><span class="token function">substring
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/Notes/" class="post-category">
+                                    Notes
                                 </a>
                             
                             
@@ -950,8 +946,8 @@ sb<span class="token punctuation">.</span><span class="token function">substring
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">Java学习</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>

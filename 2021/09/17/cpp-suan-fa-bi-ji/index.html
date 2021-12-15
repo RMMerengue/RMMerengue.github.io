@@ -473,7 +473,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.7k
+                    1.8k
                 </div>
                 
 
@@ -661,7 +661,13 @@ priority_queue<span class="token operator">&lt;</span>fruit<span class="token op
         <span class="token keyword">return</span> f1<span class="token punctuation">.</span>price<span class="token operator">></span>f2<span class="token punctuation">.</span>price<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token comment" spellcheck="true">//the operator is contrast to the sort</span>
-priority_queue<span class="token operator">&lt;</span>T<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">,</span> cmp<span class="token operator">></span> q<span class="token punctuation">;</span></code></pre>
+priority_queue<span class="token operator">&lt;</span>T<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">,</span> cmp<span class="token operator">></span> q<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//lambda</span>
+ <span class="token keyword">auto</span> cmp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token keyword">const</span> T<span class="token operator">&amp;</span> a<span class="token punctuation">,</span> <span class="token keyword">const</span> T<span class="token operator">&amp;</span> b<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">bool</span> <span class="token punctuation">{</span>
+             <span class="token keyword">return</span> a<span class="token punctuation">.</span>second <span class="token operator">&lt;</span> b<span class="token punctuation">.</span>second<span class="token punctuation">;</span> 
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+ priority_queue<span class="token operator">&lt;</span>T<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">,</span> <span class="token keyword">decltype</span><span class="token punctuation">(</span>cmp<span class="token punctuation">)</span><span class="token operator">></span> <span class="token function">que</span><span class="token punctuation">(</span>cmp<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <hr>
 <h2 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">UnionFind</span> <span class="token punctuation">{</span>
 <span class="token keyword">private</span><span class="token operator">:</span>

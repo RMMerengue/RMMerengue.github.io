@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-15T07:11:33.333Z</updated>
+  <updated>2022-06-30T08:02:08.283Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>MySQL常用指令</title>
+    <link href="http://example.com/2022/06/30/mysql-common-comands/"/>
+    <id>http://example.com/2022/06/30/mysql-common-comands/</id>
+    <published>2022-06-30T06:47:28.000Z</published>
+    <updated>2022-06-30T08:02:08.283Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数据库操作&quot;&gt;&lt;a href=&quot;#数据库操作&quot; class=&quot;headerlink&quot; title=&quot;数据库操作&quot;&gt;&lt;/a&gt;数据库操作&lt;/h2&gt;&lt;p&gt;连接MySQL&lt;/p&gt;
+&lt;pre class=&quot; language-MySQL&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="MySQL" scheme="http://example.com/categories/MySQL/"/>
+    
+    
+    <category term="MySQL" scheme="http://example.com/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Cpp算法笔记</title>
-    <link href="http://example.com/2021/09/17/cpp-suan-fa-bi-ji/"/>
-    <id>http://example.com/2021/09/17/cpp-suan-fa-bi-ji/</id>
+    <link href="http://example.com/2021/09/17/cpp-algorithm-note/"/>
+    <id>http://example.com/2021/09/17/cpp-algorithm-note/</id>
     <published>2021-09-17T09:42:28.000Z</published>
-    <updated>2021-12-15T07:11:33.333Z</updated>
+    <updated>2021-12-18T05:46:29.431Z</updated>
     
     
       
@@ -45,8 +71,8 @@
   
   <entry>
     <title>Java常用类2</title>
-    <link href="http://example.com/2021/09/16/java-chang-yong-lei-2/"/>
-    <id>http://example.com/2021/09/16/java-chang-yong-lei-2/</id>
+    <link href="http://example.com/2021/09/16/java-common-classes-2/"/>
+    <id>http://example.com/2021/09/16/java-common-classes-2/</id>
     <published>2021-09-16T07:18:29.000Z</published>
     <updated>2021-09-16T07:46:10.079Z</updated>
     
@@ -72,8 +98,8 @@
   
   <entry>
     <title>Java常用类</title>
-    <link href="http://example.com/2021/09/16/java-chang-yong-lei/"/>
-    <id>http://example.com/2021/09/16/java-chang-yong-lei/</id>
+    <link href="http://example.com/2021/09/16/java-common-classes/"/>
+    <id>http://example.com/2021/09/16/java-common-classes/</id>
     <published>2021-09-16T07:18:28.000Z</published>
     <updated>2021-09-16T07:46:33.945Z</updated>
     
@@ -101,8 +127,8 @@
   
   <entry>
     <title>Linux常用操作</title>
-    <link href="http://example.com/2021/03/17/linux-chang-yong-cao-zuo/"/>
-    <id>http://example.com/2021/03/17/linux-chang-yong-cao-zuo/</id>
+    <link href="http://example.com/2021/03/17/linux-common-comands/"/>
+    <id>http://example.com/2021/03/17/linux-common-comands/</id>
     <published>2021-03-17T02:18:28.000Z</published>
     <updated>2021-03-17T03:25:18.745Z</updated>
     
@@ -178,8 +204,8 @@
   
   <entry>
     <title>Markdown使用指南</title>
-    <link href="http://example.com/2020/10/20/markdown-shi-yong-zhi-nan/"/>
-    <id>http://example.com/2020/10/20/markdown-shi-yong-zhi-nan/</id>
+    <link href="http://example.com/2020/10/20/markdown-tutorial/"/>
+    <id>http://example.com/2020/10/20/markdown-tutorial/</id>
     <published>2020-10-20T09:42:28.000Z</published>
     <updated>2020-10-20T14:52:44.880Z</updated>
     

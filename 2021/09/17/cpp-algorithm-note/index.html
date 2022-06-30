@@ -473,7 +473,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.8k
+                    2k
                 </div>
                 
 
@@ -868,6 +868,56 @@ priority_queue<span class="token operator">&lt;</span>T<span class="token punctu
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <hr>
+<h2 id="字典树"><a href="#字典树" class="headerlink" title="字典树"></a>字典树</h2><p>Trie（发音类似 “try”）或者说 前缀树 是一种树形数据结构，用于高效地存储和检索字符串数据集中的键。这一数据结构有相当多的应用情景，例如自动补完和拼写检查。</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Trie</span> <span class="token punctuation">{</span>
+    Trie <span class="token operator">*</span>child<span class="token punctuation">[</span><span class="token number">26</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">bool</span> isWord<span class="token punctuation">;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token comment" spellcheck="true">/** Initialize your data structure here. */</span>
+    <span class="token function">Trie</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        isWord <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">26</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            child<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/** Inserts a word into the trie. */</span>
+    <span class="token keyword">void</span> <span class="token function">insert</span><span class="token punctuation">(</span>string word<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Trie <span class="token operator">*</span>t <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">char</span> c<span class="token operator">:</span> word<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>t <span class="token operator">-</span><span class="token operator">></span> child<span class="token punctuation">[</span>c<span class="token operator">-</span><span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                t<span class="token operator">-</span><span class="token operator">></span>child<span class="token punctuation">[</span>c<span class="token operator">-</span><span class="token string">'a'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Trie</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            t <span class="token operator">=</span> t<span class="token operator">-</span><span class="token operator">></span>child<span class="token punctuation">[</span>c<span class="token operator">-</span><span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        t<span class="token operator">-</span><span class="token operator">></span>isWord <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/** Returns if the word is in the trie. */</span>
+    <span class="token keyword">bool</span> <span class="token function">search</span><span class="token punctuation">(</span>string word<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Trie <span class="token operator">*</span>t <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">char</span> c<span class="token operator">:</span>word<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>t <span class="token operator">-</span><span class="token operator">></span> child<span class="token punctuation">[</span>c <span class="token operator">-</span> <span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            t <span class="token operator">=</span> t<span class="token operator">-</span><span class="token operator">></span>child<span class="token punctuation">[</span>c <span class="token operator">-</span> <span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> t<span class="token operator">-</span><span class="token operator">></span>isWord<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/** Returns if there is any word in the trie that starts with the given prefix. */</span>
+    <span class="token keyword">bool</span> <span class="token function">startsWith</span><span class="token punctuation">(</span>string prefix<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Trie <span class="token operator">*</span>t <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">char</span> c<span class="token operator">:</span>prefix<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>t<span class="token operator">-</span><span class="token operator">></span>child<span class="token punctuation">[</span>c<span class="token operator">-</span><span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            t <span class="token operator">=</span> t<span class="token operator">-</span><span class="token operator">></span>child<span class="token punctuation">[</span>c <span class="token operator">-</span> <span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<hr>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h4 id="lowbit"><a href="#lowbit" class="headerlink" title="lowbit"></a>lowbit</h4><p>能被x整除的最大2的幂次</p>
 <pre class=" language-cpp"><code class="language-cpp"><span class="token function">lowbit</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=</span> x<span class="token operator">&amp;</span><span class="token punctuation">(</span><span class="token operator">-</span>x<span class="token punctuation">)</span></code></pre>
 <hr>
@@ -899,7 +949,7 @@ n <span class="token operator">^</span> n <span class="token operator">=</span> 
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/09/17/cpp-suan-fa-bi-ji/">http://example.com/2021/09/17/cpp-suan-fa-bi-ji/</a>
+                    <a href="http://example.com/2021/09/17/cpp-algorithm-note/">http://example.com/2021/09/17/cpp-algorithm-note/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1110,18 +1160,17 @@ n <span class="token operator">^</span> n <span class="token operator">=</span> 
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/09/17/cpp-suan-fa-bi-ji/">
+                <a href="/2022/06/30/mysql-common-comands/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Cpp算法笔记">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="MySQL常用指令">
                         
-                        <span class="card-title">Cpp算法笔记</span>
+                        <span class="card-title">MySQL常用指令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1131,31 +1180,26 @@ n <span class="token operator">^</span> n <span class="token operator">=</span> 
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-17
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-30
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Algorithm/" class="post-category">
-                                    Algorithm
+                            <a href="/categories/MySQL/" class="post-category">
+                                    MySQL
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Cpp/">
-                        <span class="chip bg-color">Cpp</span>
-                    </a>
-                    
-                    <a href="/tags/Algorithm/">
-                        <span class="chip bg-color">Algorithm</span>
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
                     </a>
                     
                 </div>
@@ -1169,7 +1213,7 @@ n <span class="token operator">^</span> n <span class="token operator">=</span> 
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/16/java-chang-yong-lei-2/">
+                <a href="/2021/09/16/java-common-classes-2/">
                     <div class="card-image">
                         
                         

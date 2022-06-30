@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="My First Airticle, HungryWTY">
+    <meta name="keywords" content="Linux常用操作, HungryWTY">
     <meta name="description" content="NUIST 20级人工智能学硕">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>My First Airticle | HungryWTY</title>
+    <title>Linux常用操作 | HungryWTY</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">My First Airticle</h1>
+                    <h1 class="description center-align post-title">Linux常用操作</h1>
                 </div>
             </div>
         </div>
@@ -435,12 +435,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Markdown/">
-                                <span class="chip bg-color">Markdown</span>
-                            </a>
-                        
-                            <a href="/tags/Daily/">
-                                <span class="chip bg-color">Daily</span>
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
                     </div>
@@ -451,8 +447,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/daily/" class="post-category">
-                                daily
+                            <a href="/categories/Notes/" class="post-category">
+                                Notes
                             </a>
                         
                     </div>
@@ -464,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-10-17
+                    2021-03-17
                 </div>
                 
 
@@ -473,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    7
+                    799
                 </div>
                 
 
@@ -485,7 +481,91 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>还不会写md嘻嘻</p>
+                <h2 id="1-基本命令"><a href="#1-基本命令" class="headerlink" title="1.基本命令"></a>1.基本命令</h2><h4 id="1-1-关机"><a href="#1-1-关机" class="headerlink" title="1.1 关机"></a>1.1 关机</h4><ul>
+<li>shutdown -h now 立刻关机</li>
+<li>shutdown -h 5 五分钟后关机</li>
+<li>poweroff 立刻关机</li>
+</ul>
+<h4 id="1-2-重启"><a href="#1-2-重启" class="headerlink" title="1.2 重启"></a>1.2 重启</h4><ul>
+<li>shutdown -r now 立刻重启</li>
+<li>shutdown -r 5 五分钟后重启</li>
+<li>reboot 立刻重启</li>
+</ul>
+<h4 id="1-3-帮助命令"><a href="#1-3-帮助命令" class="headerlink" title="1.3 帮助命令"></a>1.3 帮助命令</h4><ul>
+<li><p>–help命令<br>  ifconfig  –help：查看网卡信息</p>
+</li>
+<li><p>man命令（命令说明书）<br>man shutdown<br>注意：man shutdown打开命令说明书之后，使用按键q退出</p>
+</li>
+</ul>
+<hr>
+<h2 id="2-目录操作"><a href="#2-目录操作" class="headerlink" title="2.目录操作"></a>2.目录操作</h2><h4 id="2-1-目录切换"><a href="#2-1-目录切换" class="headerlink" title="2.1 目录切换"></a>2.1 目录切换</h4><ul>
+<li>cd / 切换到根目录</li>
+<li>cd /usr 切换到根目录下的usr目录</li>
+<li>cd ../ 切换到上一级目录 或者  cd ..</li>
+<li>cd ~ 切换到home目录</li>
+<li>cd - 切换到上次访问的目录</li>
+</ul>
+<h4 id="2-2-目录查看"><a href="#2-2-目录查看" class="headerlink" title="2.2 目录查看"></a>2.2 目录查看</h4><ul>
+<li>ls 查看当前目录下的所有目录和文件</li>
+<li>ls -a&nbsp;查看当前目录下的所有目录和文件（包括隐藏的文件）</li>
+<li>ls -l 或 ll 列表查看当前目录下的所有目录和文件（列表查看，显示更多信息）</li>
+<li>ls /dir&nbsp;查看指定目录下的所有目录和文件 &nbsp; 如：ls /usr</li>
+</ul>
+<h4 id="2-3-创建操作"><a href="#2-3-创建操作" class="headerlink" title="2.3 创建操作"></a>2.3 创建操作</h4><ul>
+<li>mkdir aaa 在当前目录下创建一个名为aaa的目录</li>
+<li>mkdir /usr/aaa 在指定目录下创建一个名为aaa的目录</li>
+</ul>
+<h4 id="2-4-删除操作"><a href="#2-4-删除操作" class="headerlink" title="2.4 删除操作"></a>2.4 删除操作</h4><ul>
+<li>rm 文件 删除当前目录下的文件</li>
+<li>rm -f 文件 删除当前目录的的文件（不询问）</li>
+<li>rm -r aaa 递归删除当前目录下的aaa目录</li>
+<li>rm -rf aaa 递归删除当前目录下的aaa目录（不询问）</li>
+<li>rm -rf * 将当前目录下的所有目录和文件全部删除</li>
+<li>rm -rf /* 【慎用】将根目录下的所有文件全部删</li>
+</ul>
+<h4 id="2-5-修改操作"><a href="#2-5-修改操作" class="headerlink" title="2.5 修改操作"></a>2.5 修改操作</h4><ul>
+<li>mv 当前目录 新目录 重命名目录</li>
+<li>mv 目录名称 目录的新位置 剪切目录</li>
+<li>cp -r 目录名称 目录拷贝的目标位置   -r代表递归</li>
+</ul>
+<h4 id="2-5-查找操作"><a href="#2-5-查找操作" class="headerlink" title="2.5 查找操作"></a>2.5 查找操作</h4><ul>
+<li>find 目录 参数 文件名称  </li>
+</ul>
+<hr>
+<h2 id="3-文件操作"><a href="#3-文件操作" class="headerlink" title="3.文件操作"></a>3.文件操作</h2><h4 id="3-1-新建文件"><a href="#3-1-新建文件" class="headerlink" title="3.1 新建文件"></a>3.1 新建文件</h4><ul>
+<li>touch 文件名</li>
+</ul>
+<h4 id="3-2-修改文件（vi）"><a href="#3-2-修改文件（vi）" class="headerlink" title="3.2 修改文件（vi）"></a>3.2 修改文件（vi）</h4><p>基本上vi可以分为三种状态，分别是<strong>命令模式（command mode）</strong>、<strong>插入模式（Insertmode）</strong>和<strong>底行模式（last line mode）</strong>，各模式的功能区分如下：</p>
+<h5 id="3-2-1-命令行模式-command-mode）"><a href="#3-2-1-命令行模式-command-mode）" class="headerlink" title="3.2.1 命令行模式(command mode）"></a>3.2.1 命令行模式(command mode）</h5><ul>
+<li>i o a 进入编辑模式</li>
+<li>: 进入底行模式</li>
+<li>[n]dd 删除当前行开始的n行</li>
+<li>[n]yy 复制当前行开始的n行</li>
+<li>p 把粘贴板上的内容插入到当前行</li>
+<li>. 执行上一次操作</li>
+<li>u 撤销前一个操作</li>
+<li>Ctrl+f/Ctrl+b 向前、后滚动一个屏幕 </li>
+<li>gg 到文件第一行行首</li>
+<li>G 到文件最后一行行首</li>
+<li>[n]G/[n]gg 到指定行</li>
+<li>gg=G 自动缩进</li>
+<li>/字符 查找字符</li>
+</ul>
+<h5 id="3-2-2-编辑模式（Insert-mode）"><a href="#3-2-2-编辑模式（Insert-mode）" class="headerlink" title="3.2.2 编辑模式（Insert mode）"></a>3.2.2 编辑模式（Insert mode）</h5><ul>
+<li>ESC 退出编辑模式到命令行模式</li>
+</ul>
+<h5 id="3-2-3-底行模式（last-line-mode）"><a href="#3-2-3-底行模式（last-line-mode）" class="headerlink" title="3.2.3 底行模式（last line mode）"></a>3.2.3 底行模式（last line mode）</h5><ul>
+<li>退出编辑：:q</li>
+<li>强制退出：:q!</li>
+<li>保存并退出：:wq</li>
+</ul>
+<hr>
+<h2 id="4-压缩文件操作"><a href="#4-压缩文件操作" class="headerlink" title="4.压缩文件操作"></a>4.压缩文件操作</h2><h4 id="4-1-打包和压缩"><a href="#4-1-打包和压缩" class="headerlink" title="4.1 打包和压缩"></a>4.1 打包和压缩</h4><ul>
+<li>tar -zcvf 打包压缩后的文件名 要打包的文件（z：调用gzip压缩命令进行压缩 c：打包文件 v：显示运行过程 f：指定文件名）</li>
+</ul>
+<h4 id="4-2-解压"><a href="#4-2-解压" class="headerlink" title="4.2 解压"></a>4.2 解压</h4><ul>
+<li>tar -zxvf 解压文件</li>
+</ul>
 
             </div>
             <hr/>
@@ -511,7 +591,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/10/17/my-first-airticle/">http://example.com/2020/10/17/my-first-airticle/</a>
+                    <a href="http://example.com/2021/03/17/linux-common-comands/">http://example.com/2021/03/17/linux-common-comands/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -549,12 +629,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Markdown/">
-                                    <span class="chip bg-color">Markdown</span>
-                                </a>
-                            
-                                <a href="/tags/Daily/">
-                                    <span class="chip bg-color">Daily</span>
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
                         </div>
@@ -726,13 +802,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/10/20/markdown-tutorial/">
+                <a href="/2021/09/16/java-common-classes/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Markdown使用指南">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Java常用类">
                         
-                        <span class="card-title">Markdown使用指南</span>
+                        <span class="card-title">Java常用类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -743,14 +819,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-16
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Skills/" class="post-category">
-                                    Skills
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
@@ -760,8 +836,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/Date/">
+                        <span class="chip bg-color">Date</span>
+                    </a>
+                    
+                    <a href="/tags/Math/">
+                        <span class="chip bg-color">Math</span>
+                    </a>
+                    
+                    <a href="/tags/String/">
+                        <span class="chip bg-color">String</span>
                     </a>
                     
                 </div>
@@ -772,16 +856,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/17/my-first-airticle/">
+                <a href="/2020/12/14/object-dtection/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="My First Airticle">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Notes of Deep Learning Lessons:L4-CNN-Obeject Detection">
                         
-                        <span class="card-title">My First Airticle</span>
+                        <span class="card-title">Notes of Deep Learning Lessons:L4-CNN-Obeject Detection</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -792,30 +876,25 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/daily/" class="post-category">
-                                    daily
+                            <a href="/categories/Deep-Learning/" class="post-category">
+                                    Deep Learning
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
-                    </a>
-                    
-                    <a href="/tags/Daily/">
-                        <span class="chip bg-color">Daily</span>
+                    <a href="/tags/Paper-Notes/">
+                        <span class="chip bg-color">Paper Notes</span>
                     </a>
                     
                 </div>

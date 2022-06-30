@@ -469,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    286
+                    316
                 </div>
                 
 
@@ -528,28 +528,28 @@ drop table stu_test;
 -- 如果存在 stu_test 表，则删除 stu_test 表
 drop table if exists stu_test;</code></pre>
 <h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><p>查询全部数据</p>
-<pre class=" language-MySQL"><code class="language-MySQL">select * from <table_name>;</code></pre>
+<pre class=" language-MySQL"><code class="language-MySQL">select * from [table_name];</code></pre>
 <p>条件查询</p>
-<pre class=" language-MySQL"><code class="language-MySQL">select * from <table_name> where <condition>;</code></pre>
+<pre class=" language-MySQL"><code class="language-MySQL">select * from [table_name] where [condition];</code></pre>
 <p>投影查询</p>
-<pre class=" language-MySQL"><code class="language-MySQL">select <col1, col2, col3> from <table_name> where <condition>;</code></pre>
+<pre class=" language-MySQL"><code class="language-MySQL">select [col1, col2, col3] from [table_name] where [condition];</code></pre>
 <p>排序</p>
-<pre class=" language-MySQL"><code class="language-MySQL">select <col1, col2, col3> from <table_name> where <condition> order by coln <DESC>;</code></pre>
+<pre class=" language-MySQL"><code class="language-MySQL">select [col1, col2, col3] from [table_name] where [condition] order by coln [DESC];</code></pre>
 <p>聚合查询</p>
-<pre class=" language-MySQL"><code class="language-MySQL">select <sum, avg, max, min>(*) <new_col_name> from <table_name>;</code></pre>
+<pre class=" language-MySQL"><code class="language-MySQL">select [sum, avg, max, min](*) [new_col_name] from [table_name];</code></pre>
 <p>多表查询</p>
-<pre class=" language-MySQL"><code class="language-MySQL">select * from <table1>, <table2>;</code></pre>
+<pre class=" language-MySQL"><code class="language-MySQL">select * from [table1], [table2];</code></pre>
 <p>连接查询</p>
 <pre class=" language-MySQL"><code class="language-MySQL">select s.id, s.name, s.class_id, c.name class_name, s.gender, s.score
 from students s
-<left outer, right outer, inner> join classes c
+[left outer, right outer, inner] join classes c
 on s.class_id = c.id;</code></pre>
 <h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><p>增加</p>
-<pre class=" language-MySQL"><code class="language-MySQL">insert into <table_name> (col1, col2...) values(value1, value2..);</code></pre>
+<pre class=" language-MySQL"><code class="language-MySQL">insert into [table_name] (col1, col2...) values(value1, value2..);</code></pre>
 <p>修改</p>
-<pre class=" language-MySQL"><code class="language-MySQL">update <table_name> set col1=value1, col2=value2, ... where ...;</code></pre>
+<pre class=" language-MySQL"><code class="language-MySQL">update [table_name] set col1=value1, col2=value2, ... where ...;</code></pre>
 <p>删除</p>
-<pre class=" language-MySQL"><code class="language-MySQL">delete from <table_name> where...;</code></pre>
+<pre class=" language-MySQL"><code class="language-MySQL">delete from [table_name] where...;</code></pre>
 
             </div>
             <hr/>

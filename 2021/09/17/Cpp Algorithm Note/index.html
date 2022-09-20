@@ -482,7 +482,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="万能头文件"><a href="#万能头文件" class="headerlink" title="万能头文件"></a>万能头文件</h2><pre><code class="cpp">#include &lt;bits/stdc++.h&gt;</code></pre>
+                <h2 id="万能头文件"><a href="#万能头文件" class="headerlink" title="万能头文件"></a>万能头文件</h2><pre><code class="cpp">#include &lt;bits/stdc++.h&gt;
+</code></pre>
 <hr>
 <h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>外部函数</p>
 <pre><code class="cpp">bool cmp(T a, T b)&#123;
@@ -491,11 +492,13 @@
 
 void main()&#123;
     sort(nums.begin(), nums.end(), cmp);
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>Lambda表达式</p>
 <pre><code class="cpp">sort(nums.begin(),nums.end(),[](T &amp;a, T &amp;b)&#123;
     return //sort rule;
-&#125;);</code></pre>
+&#125;);
+</code></pre>
 <p>快速排序模板</p>
 <pre><code class="cpp">int Partition(int A[], int left, int right)&#123;
     int tmp = A[left];
@@ -532,7 +535,8 @@ int randPartition(int A[], int left, int right)&#123;
     A[left] = tmp;
     return left;
 
-&#125;</code></pre>
+&#125;
+</code></pre>
 <hr>
 <h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><p>查看元素是否存在</p>
 <pre><code class="cpp">//template
@@ -549,7 +553,8 @@ int binarySearch(int A[], int left, int right, int target)&#123;
     return -1;
 &#125;
 //STL
-binary_search(nums.begin(), nums.end(), target);</code></pre>
+binary_search(nums.begin(), nums.end(), target);
+</code></pre>
 <p>求序列中第一个大于等于target的元素的位置</p>
 <pre><code class="cpp">//template
 int lower_bound(int A[], int left, int right, int target)&#123;
@@ -567,7 +572,8 @@ int lower_bound(int A[], int left, int right, int target)&#123;
 //STL
 lower_bound(nums.begin(), nums.end(), target, [](const T target, const T &amp;a)&#123;
     return //rule;
-&#125;);</code></pre>
+&#125;);
+</code></pre>
 <p>求序列中第一个大于target的元素的位置</p>
 <pre><code class="cpp">//template
 int upper_bound(int A[], int left, int right, int target)&#123;
@@ -585,7 +591,8 @@ int upper_bound(int A[], int left, int right, int target)&#123;
 //STL
 upper_bound(nums.begin(), nums.end(), target, [](const T target, const T &amp;a)&#123;
     return //rule;
-&#125;);</code></pre>
+&#125;);
+</code></pre>
 <hr>
 <h2 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h2><h4 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h4><p>求解a^b%m  </p>
 <p>递归写法</p>
@@ -598,7 +605,8 @@ LL binaryPow(LL a, LL b, LL m)&#123;
         LL mul = binaryPow(a, b/2, m);//if b is an even num, convert to b/2
         return mul*mul%m;
     &#125;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>迭代写法</p>
 <pre><code class="cpp">typedef long long LL;
 LL binaryPow(LL a, LL b, LL m)&#123;
@@ -611,11 +619,13 @@ LL binaryPow(LL a, LL b, LL m)&#123;
         b &gt;&gt;= 1;
     &#125;
     return ans;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <hr>
 <h4 id="素数筛"><a href="#素数筛" class="headerlink" title="素数筛"></a>素数筛</h4><pre><code class="cpp">#define maxn 1000000
 bool vis[maxn];
-int prime[maxn], primeNums;</code></pre>
+int prime[maxn], primeNums;
+</code></pre>
 <p>埃氏筛</p>
 <pre><code class="cpp">void aiShiShai(int n)&#123;
     for(int i = 2; i&lt;=n; i++)&#123;
@@ -624,7 +634,8 @@ int prime[maxn], primeNums;</code></pre>
             vis[i*j] = true;
         &#125;
     &#125;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>欧拉筛</p>
 <pre><code class="cpp">void ouLaShai(int n)&#123;
     for(int i = 2; i&lt;=n; i++)&#123;
@@ -635,7 +646,8 @@ int prime[maxn], primeNums;</code></pre>
             if(i%prime[j]==0) break;
         &#125;
     &#125;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <hr>
 <h2 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h2><p>priority_queue</p>
 <pre><code class="cpp">priority_queue&lt;T, vector&lt;T&gt;, less&lt;T&gt;&gt; q;//big num, high priority
@@ -664,7 +676,8 @@ priority_queue&lt;T, vector&lt;T&gt;, cmp&gt; q;
  auto cmp = [](const T&amp; a, const T&amp; b) -&gt; bool &#123;
              return a.second &lt; b.second; 
         &#125;;
- priority_queue&lt;T, vector&lt;T&gt;, decltype(cmp)&gt; que(cmp);</code></pre>
+ priority_queue&lt;T, vector&lt;T&gt;, decltype(cmp)&gt; que(cmp);
+</code></pre>
 <hr>
 <h2 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h2><pre><code class="cpp">class UnionFind &#123;
 private:
@@ -712,7 +725,8 @@ public:
     int get_total_areas() &#123;
         return n_areas;
     &#125;
-&#125;;</code></pre>
+&#125;;
+</code></pre>
 <hr>
 <h2 id="图算法"><a href="#图算法" class="headerlink" title="图算法"></a>图算法</h2><h4 id="Dijkstra算法"><a href="#Dijkstra算法" class="headerlink" title="Dijkstra算法"></a>Dijkstra算法</h4><pre><code class="cpp">int n, G[MAXV][MAXV];//n is the num of nodes, MAXV is the max num of nodes
 int dis[MAXV]；
@@ -738,7 +752,8 @@ void Dijkstra(int start)&#123;
             &#125;
         &#125;
     &#125;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <hr>
 <h4 id="Floyd算法"><a href="#Floyd算法" class="headerlink" title="Floyd算法"></a>Floyd算法</h4><pre><code class="cpp">const int MAXV = 200;
 int n,m;//n is num of the nodes, m is the num of edges
@@ -754,7 +769,8 @@ void Floyd()&#123;
             &#125;
         &#125;
     &#125;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <hr>
 <h4 id="Prim算法"><a href="#Prim算法" class="headerlink" title="Prim算法"></a>Prim算法</h4><pre><code class="cpp">int n, G[MAXV][MAXV];//n is the num of nodes, MAXV is the max num of nodes
 int d[MAXV];
@@ -783,7 +799,8 @@ int prim()&#123;
         &#125;
     &#125;
     return ans;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <hr>
 <h4 id="Kruskal算法"><a href="#Kruskal算法" class="headerlink" title="Kruskal算法"></a>Kruskal算法</h4><pre><code class="cpp">struct edge&#123;
     int u, v;
@@ -807,7 +824,8 @@ int Kruskal(int n, int m)&#123;
     &#125;
     if(U.get_total_areas()==1) return -1;
     else return ans;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <hr>
 <h4 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h4><pre><code class="cpp">vector&lt;int&gt; G[MAXV];
 int n, m inDegree[MAXV];
@@ -835,35 +853,42 @@ bool topologicalSort()&#123;
     &#125;
     if(num==n) return true;
     else return false;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <hr>
-<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h4 id="01背包问题"><a href="#01背包问题" class="headerlink" title="01背包问题"></a>01背包问题</h4><pre><code>有n件物品，每件物品的重量为w[i],价值为c[i],现有一个容量为V的背包，问如何选取物品放入背包，使得背包内物品的价值最大，其中每种物品都只有一件  </code></pre>
+<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h4 id="01背包问题"><a href="#01背包问题" class="headerlink" title="01背包问题"></a>01背包问题</h4><pre><code>有n件物品，每件物品的重量为w[i],价值为c[i],现有一个容量为V的背包，问如何选取物品放入背包，使得背包内物品的价值最大，其中每种物品都只有一件  
+</code></pre>
 <p>dp[i][v]表示前i件物品恰好装入容量为v的背包中所能获得的最大价值</p>
 <pre><code class="cpp">for(int i = 1; i&lt;=n; i++)&#123;
     for(int v = w[i]; v&lt;=V; v++)&#123;
         dp[i][v] = max(dp[i-1][v], dp[i-1][v-w[i]]+c[i]);
     &#125;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>滚动数组优化：</p>
 <pre><code class="cpp">for(int i = 1; i&lt;=n; i++)&#123;
     for(int v = V; v&gt;=w[i]; v--)&#123;
         dp[v] = max(dp[v], dp[v-w[i]] + c[i]);
     &#125;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <hr>
-<h4 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h4><pre><code>有n种物品，每种物品的单件重量为w[i],价值为c[i]。现有一个容量为V的背包，问如何选取物品放入背包，使得背包内物品的总价值最大，每种物品都有无穷件。</code></pre>
+<h4 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h4><pre><code>有n种物品，每种物品的单件重量为w[i],价值为c[i]。现有一个容量为V的背包，问如何选取物品放入背包，使得背包内物品的总价值最大，每种物品都有无穷件。
+</code></pre>
 <p>dp[i][v]表示前i件物品恰好装入容量为v的背包中所能获得的最大价值</p>
 <pre><code class="cpp">for(int i = 1; i&lt;=n; i++)&#123;
     for(int v = w[i]; v&lt;=V; v++)&#123;
         dp[i][v] = max(dp[i-1][v], dp[i][v-w[i]]+c[i]);
     &#125;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>滚动数组优化</p>
 <pre><code class="cpp">for(int i = 1; i&lt;=n; i++)&#123;
     for(int v = w[i]; v&lt;=V; v++)&#123;
         dp[v] = max(dp[v], dp[v-w[i]] + c[i]);
     &#125;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <hr>
 <h2 id="字典树"><a href="#字典树" class="headerlink" title="字典树"></a>字典树</h2><p>Trie（发音类似 “try”）或者说 前缀树 是一种树形数据结构，用于高效地存储和检索字符串数据集中的键。这一数据结构有相当多的应用情景，例如自动补完和拼写检查。</p>
 <pre><code class="cpp">class Trie &#123;
@@ -877,7 +902,7 @@ public:
             child[i] = nullptr;
         &#125;
     &#125;
-
+    
     /** Inserts a word into the trie. */
     void insert(string word) &#123;
         Trie *t = this;
@@ -889,7 +914,7 @@ public:
         &#125;
         t-&gt;isWord = true;
     &#125;
-
+    
     /** Returns if the word is in the trie. */
     bool search(string word) &#123;
         Trie *t = this;
@@ -901,7 +926,7 @@ public:
         &#125;
         return t-&gt;isWord;
     &#125;
-
+    
     /** Returns if there is any word in the trie that starts with the given prefix. */
     bool startsWith(string prefix) &#123;
         Trie *t = this;
@@ -913,19 +938,23 @@ public:
         &#125;
         return true;
     &#125;
-&#125;;</code></pre>
+&#125;;
+</code></pre>
 <hr>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h4 id="lowbit"><a href="#lowbit" class="headerlink" title="lowbit"></a>lowbit</h4><p>能被x整除的最大2的幂次</p>
-<pre><code class="cpp">lowbit(x) = x&amp;(-x)</code></pre>
+<pre><code class="cpp">lowbit(x) = x&amp;(-x)
+</code></pre>
 <hr>
 <h4 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h4><pre><code class="cpp">a^b^c == a^c^b
 0 ^ n = n;
-n ^ n = 0;</code></pre>
+n ^ n = 0;
+</code></pre>
 <hr>
 <h4 id="求1-2-…-n"><a href="#求1-2-…-n" class="headerlink" title="求1+2+…+n"></a>求1+2+…+n</h4><pre><code class="cpp">int sumNums(int n) &#123;
     n &amp;&amp; (n += sumNums(n-1));
     return n;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <h4 id="不用加减乘除法做加法"><a href="#不用加减乘除法做加法" class="headerlink" title="不用加减乘除法做加法"></a>不用加减乘除法做加法</h4><pre><code class="cpp">//^表示无进位求和
 //&amp;表示求每位的进位数
  int add(int a, int b) &#123;
@@ -936,7 +965,8 @@ n ^ n = 0;</code></pre>
         return a; 
     &#125;
     return add(a^b, (unsigned)(a&amp;b) &lt;&lt; 1); 
-&#125;</code></pre>
+&#125;
+</code></pre>
 
             </div>
             <hr/>

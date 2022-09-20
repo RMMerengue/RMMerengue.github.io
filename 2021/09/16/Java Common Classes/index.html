@@ -499,7 +499,8 @@ for(int i = 0; i&lt;100000; i++)&#123;
 &#125;
 long endTime = System.currentTimeMillis();
 System.out.println(endTime-startTime);
-//727</code></pre>
+//727
+</code></pre>
 <hr>
 <h4 id="java-sql-Date"><a href="#java-sql-Date" class="headerlink" title="java.sql.Date"></a>java.sql.Date</h4><p>java.sql.Date为java.util.Date的子类</p>
 <pre><code class="java">Date d = new Date(1592056131151L);
@@ -515,7 +516,8 @@ Date date2 = new Date(date.getTime());//利用构造器
 java.util.Date date3 = d;
 
 //string-&gt;sql.Date:
-Date date4 = Date.valueOf(&quot;2021-6-13&quot;);</code></pre>
+Date date4 = Date.valueOf(&quot;2021-6-13&quot;);
+</code></pre>
 <hr>
 <h4 id="日期转化"><a href="#日期转化" class="headerlink" title="日期转化"></a>日期转化</h4><pre><code class="java">DateFormat df = new SimpleDateFormat(pattern:&quot;yyyy-MM-dd HH:mm:ss&quot;);
 //SimpleDateFormat extends DateFormat(抽象类)
@@ -531,7 +533,8 @@ try&#123;
 
 //Date-&gt;String
 String format = df.format(new Date());
-System.out.println(format);//2021-06-14 14:34:51</code></pre>
+System.out.println(format);//2021-06-14 14:34:51
+</code></pre>
 <hr>
 <h4 id="Calendar"><a href="#Calendar" class="headerlink" title="Calendar"></a>Calendar</h4><pre><code class="java">Calendar cal = new GregorianCalendar;
 Calendar cal2 = Calendar.getInstance();
@@ -549,7 +552,8 @@ cal.set(Calendar.Month,3)
 java.sql.Date date = java.sql.Date.valueOf(&quot;2021-4-5&quot;);
 
 //java.sql.Date-&gt;Calendar:
-cal.setTime(date);</code></pre>
+cal.setTime(date);
+</code></pre>
 <hr>
 <h4 id="LocalDateTime"><a href="#LocalDateTime" class="headerlink" title="LocalDateTime"></a>LocalDateTime</h4><pre><code class="java">//get
 LocalDateTime.getYear();//2021
@@ -561,7 +565,8 @@ LocalDateTime LocalDateTime2 = LocalDateTime.withMonth(8);
 
 //加减操作
 LocalDateTime LocalDateTime3 = LocalDateTime.plusMonths(8);
-LocalDateTime LocalDateTime3 = LocalDateTime.minusMonths(8);</code></pre>
+LocalDateTime LocalDateTime3 = LocalDateTime.minusMonths(8);
+</code></pre>
 <hr>
 <h4 id="DateTimeFormatmatter"><a href="#DateTimeFormatmatter" class="headerlink" title="DateTimeFormatmatter"></a>DateTimeFormatmatter</h4><pre><code class="java">DateTimeFormatmatter df = DateTimeFormatmatter.ofPattern(&quot;yyyy-MM-dd hh:mm:ss&quot;);
 
@@ -571,7 +576,8 @@ String format = df.format(now);
 System.out.println(format);//2021-06-15 03:22:25
 
 //String-&gt;LocalDateTime
-TemporalAccessow parse = df.parse(text:&quot;2021-06-15 03:22:25&quot;);</code></pre>
+TemporalAccessow parse = df.parse(text:&quot;2021-06-15 03:22:25&quot;);
+</code></pre>
 <hr>
 <h2 id="Math类"><a href="#Math类" class="headerlink" title="Math类"></a>Math类</h2><pre><code class="java">Math.random();//生成随机数
 Math.abs(-80);//80 绝对值
@@ -579,7 +585,8 @@ Math.ceil(9.1);//10 向下取整
 Math.floor(9.9);//9 向上取整
 Math.round(3.5);//4 四舍五入
 Math.max(3,6);//6 取最大值
-Math.min(3,6);//3 取最小值</code></pre>
+Math.min(3,6);//3 取最小值
+</code></pre>
 <hr>
 <h2 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h2><h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><pre><code class="java">String s = new String(&quot;abcdefghijk&quot;);
 
@@ -605,7 +612,8 @@ s.toLowerCase();//转换为小写
 String s4 = &quot;   a b c  &quot;;
 s4.trim();
 
-String.valueOf(false);//转换为String类型</code></pre>
+String.valueOf(false);//转换为String类型
+</code></pre>
 <hr>
 <h4 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h4><pre><code class="java">StringBuilder sb = new StringBuffer(&quot;abcdefg&quot;);
 
@@ -625,7 +633,8 @@ sb.setCharAt(3,&#39;a&#39;);//替换下标为3的值
 sb.charAt(i);
 
 //截取
-sb.substring(2,4);//返回[2，4)，一个新的String</code></pre>
+sb.substring(2,4);//返回[2，4)，一个新的String
+</code></pre>
 <hr>
 <h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><ul>
 <li>String类是不可变类，一旦创建以后，包含在这个对象中的字符序列是不可改变的，直至这个对象销毁</li>

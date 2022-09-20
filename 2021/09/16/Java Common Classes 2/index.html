@@ -491,7 +491,8 @@ Collections.addAll(list,new String[]&#123;&quot;gg&quot;,&quot;hh&quot;&#125;);
 Collections.sort(list);
 Collections.binarySearch(list, key:&quot;cc&quot;);
 
-Collections.fill(list2,obj:&quot;yyy&quot;);</code></pre>
+Collections.fill(list2,obj:&quot;yyy&quot;);
+</code></pre>
 <hr>
 <h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><pre><code class="java">//接口不能创建对象，利用实现类创建对象
 Collections col = new ArrayList();
@@ -530,7 +531,8 @@ while(it.hasNext())&#123;
 //判断
 col.contains(element : 15);
 col.equals(col2);
-col.isEmpty();</code></pre>
+col.isEmpty();
+</code></pre>
 <hr>
 <h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><pre><code class="java">List&lt;Integer&gt; list = new ArrayList();
 
@@ -586,7 +588,8 @@ list.lastIndexOf(Object o);//返回指定元素最后一次出现的索引，没
 
 list.peek();//查看第一个元素
 list.peekFirst();
-list.peekLast();</code></pre>
+list.peekLast();
+</code></pre>
 <hr>
 <h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><pre><code class="java">Set &lt;String&gt; strs=new HashSet&lt;&gt;();
 
@@ -603,7 +606,8 @@ strs.toArray();
 
 //查
 strs.isEmpty();
-strs.size();</code></pre>
+strs.size();
+</code></pre>
 <hr>
 <h2 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h2><pre><code class="java">Comparator&lt;Student&gt; com = new Comparator&lt;Student&gt;()&#123;
     @Override
@@ -647,7 +651,8 @@ map.values();//返回values集合
 map.containsKey(Object key);
 map.containsValue(Object value);
 map.equals(Object o);
-map.isEmpty();</code></pre>
+map.isEmpty();
+</code></pre>
 <hr>
 <h2 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h2><pre><code class="java">Map&lt;Student, Integer&gt; map = new TreeMap&lt;&gt;(new Comparator&lt;Student&gt;()&#123;
     @Override

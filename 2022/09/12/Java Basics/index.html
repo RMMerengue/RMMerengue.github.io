@@ -1150,8 +1150,8 @@ List&lt;String&gt; list2 = list1; // 编译时警告“未经检查的转换”
 </ol>
 <p><strong>扩展阅读：</strong></p>
 <ol>
-<li>Collection体系的继承树：<br><img src="/2022/09/12/Java-Basics/2.1_1.png"></li>
-<li>Map体系的继承树<br><img src="/2022/09/12/Java-Basics/2.1_2.png"></li>
+<li>Collection体系的继承树：<br><img src="/2022/09/12/Java%20Basics/2.1_1.png"></li>
+<li>Map体系的继承树<br><img src="/2022/09/12/Java%20Basics/2.1_2.png"></li>
 </ol>
 <p><em>注：紫色框体代表接口，其中加粗的是代表四类集合的接口。蓝色框体代表实现类，其中有阴影的是常 用实现类。</em></p>
 <hr>
@@ -1167,7 +1167,7 @@ List&lt;String&gt; list2 = list1; // 编译时警告“未经检查的转换”
 </ol>
 <p><strong>扩展阅读：</strong></p>
 <ol>
-<li>java.util.concurrent包下线程安全的集合类的体系结构：<br><img src="/2022/09/12/Java-Basics/2.2.png"></li>
+<li>java.util.concurrent包下线程安全的集合类的体系结构：<br><img src="/2022/09/12/Java%20Basics/2.2.png"></li>
 </ol>
 <hr>
 <h4 id="Map接口的实现类"><a href="#Map接口的实现类" class="headerlink" title="Map接口的实现类"></a>Map接口的实现类</h4><p><strong>参考答案：</strong></p>
@@ -1192,7 +1192,7 @@ List&lt;String&gt; list2 = list1; // 编译时警告“未经检查的转换”
 </ol>
 <p><strong>扩展阅读：</strong></p>
 <ol>
-<li>HashMap添加数据的详细过程，如下图：<br><img src="/2022/09/12/Java-Basics/2.4.png"></li>
+<li>HashMap添加数据的详细过程，如下图：<br><img src="/2022/09/12/Java%20Basics/2.4.png"></li>
 <li>JDK1.7和1.8的不同<ul>
 <li>链表插入节点时，1.7为<strong>头插法</strong>，1.8为<strong>尾插法</strong></li>
 <li>1.7是大于等于阈值且没有空位才扩容</li>
@@ -1316,8 +1316,8 @@ List&lt;String&gt; list2 = list1; // 编译时警告“未经检查的转换”
 <hr>
 <h4 id="ConcurrentHashMap的实现"><a href="#ConcurrentHashMap的实现" class="headerlink" title="ConcurrentHashMap的实现"></a>ConcurrentHashMap的实现</h4><p><strong>参考答案：</strong></p>
 <ol>
-<li><strong>JDK 1.7中的实现：</strong> 在 jdk 1.7 中，ConcurrentHashMap 是由 Segment 数据结构和 HashEntry 数组结构构成，采取分段锁来保证安全性。Segment 是 ReentrantLock 重入锁，在 ConcurrentHashMap 中扮演锁的角色，HashEntry 则用于存储键值对数据。一个 ConcurrentHashMap 里包含一个 Segment 数组，一个Segment 里包含一个 HashEntry 数组，Segment 的结构和 HashMap 类似，是一个数组和链表结构。<br><img src="/2022/09/12/Java-Basics/2.17_1.png"></li>
-<li><strong>JDK 1.8中的实现：</strong> JDK1.8 的实现已经摒弃了 Segment 的概念，而是直接用 Node 数组+链表+红黑树的数据结构来实现，并发控制使用 Synchronized 和 CAS 来操作，整个看起来就像是优化过且线程安全的 HashMap，虽然在 JDK1.8 中还能看到 Segment 的数据结构，但是已经简化了属性，只是为了兼容旧版本。<br><img src="/2022/09/12/Java-Basics/2.17_2.png"></li>
+<li><strong>JDK 1.7中的实现：</strong> 在 jdk 1.7 中，ConcurrentHashMap 是由 Segment 数据结构和 HashEntry 数组结构构成，采取分段锁来保证安全性。Segment 是 ReentrantLock 重入锁，在 ConcurrentHashMap 中扮演锁的角色，HashEntry 则用于存储键值对数据。一个 ConcurrentHashMap 里包含一个 Segment 数组，一个Segment 里包含一个 HashEntry 数组，Segment 的结构和 HashMap 类似，是一个数组和链表结构。<br><img src="/2022/09/12/Java%20Basics/2.17_1.png"></li>
+<li><strong>JDK 1.8中的实现：</strong> JDK1.8 的实现已经摒弃了 Segment 的概念，而是直接用 Node 数组+链表+红黑树的数据结构来实现，并发控制使用 Synchronized 和 CAS 来操作，整个看起来就像是优化过且线程安全的 HashMap，虽然在 JDK1.8 中还能看到 Segment 的数据结构，但是已经简化了属性，只是为了兼容旧版本。<br><img src="/2022/09/12/Java%20Basics/2.17_2.png"></li>
 </ol>
 <hr>
 <h4 id="ConcurrentHashMap是怎么分段分组的"><a href="#ConcurrentHashMap是怎么分段分组的" class="headerlink" title="ConcurrentHashMap是怎么分段分组的"></a>ConcurrentHashMap是怎么分段分组的</h4><p><strong>参考答案：</strong></p>
@@ -1341,7 +1341,7 @@ List&lt;String&gt; list2 = list1; // 编译时警告“未经检查的转换”
 <h4 id="LinkedHashMap的底层原理"><a href="#LinkedHashMap的底层原理" class="headerlink" title="LinkedHashMap的底层原理"></a>LinkedHashMap的底层原理</h4><p><strong>参考答案：</strong></p>
 <ol>
 <li>LinkedHashMap继承于HashMap，它在HashMap的基础上，通过维护一条双向链表，解决了HashMap不能随时保持遍历顺序和插入顺序一致的问题。在实现上，LinkedHashMap很多方法直接继承自HashMap，仅为维护双向链表重写了部分方法。</li>
-<li>如下图，淡蓝色的箭头表示前驱引用，红色箭头表示后继引用。每当有新的键值对节点插入时，新节点最终会接在tail引用指向的节点后面。而tail引用则会移动到新的节点上，这样一个双向链表就建立起来了。<br><img src="/2022/09/12/Java-Basics/2.20.png"></li>
+<li>如下图，淡蓝色的箭头表示前驱引用，红色箭头表示后继引用。每当有新的键值对节点插入时，新节点最终会接在tail引用指向的节点后面。而tail引用则会移动到新的节点上，这样一个双向链表就建立起来了。<br><img src="/2022/09/12/Java%20Basics/2.20.png"></li>
 </ol>
 <hr>
 <h4 id="TreeMap的底层原理"><a href="#TreeMap的底层原理" class="headerlink" title="TreeMap的底层原理"></a>TreeMap的底层原理</h4><p><strong>参考答案：</strong></p>
@@ -1410,7 +1410,7 @@ List&lt;String&gt; list2 = list1; // 编译时警告“未经检查的转换”
 <hr>
 <h4 id="BlockingQueue中有哪些方法，为什么这样设计"><a href="#BlockingQueue中有哪些方法，为什么这样设计" class="headerlink" title="BlockingQueue中有哪些方法，为什么这样设计"></a>BlockingQueue中有哪些方法，为什么这样设计</h4><p><strong>参考答案：</strong></p>
 <ol>
-<li>为了应对不同的业务场景，BlockingQueue 提供了4 组不同的方法用于插入、移除以及对队列中的元素进行检查。如果请求的操作不能得到立即执行的话，每组方法的表现是不同的。这些方法如下：<br> <img src="/2022/09/12/Java-Basics/2.30.png"><br> 四组不同的行为方式含义如下：<ul>
+<li>为了应对不同的业务场景，BlockingQueue 提供了4 组不同的方法用于插入、移除以及对队列中的元素进行检查。如果请求的操作不能得到立即执行的话，每组方法的表现是不同的。这些方法如下：<br> <img src="/2022/09/12/Java%20Basics/2.30.png"><br> 四组不同的行为方式含义如下：<ul>
 <li>抛异常：如果操作无法立即执行，则抛一个异常；</li>
 <li>特定值：如果操作无法立即执行，则返回一个特定的值(一般是 true / false)。</li>
 <li>阻塞：如果操作无法立即执行，则该方法调用将会发生阻塞，直到能够执行；</li>
@@ -1465,7 +1465,7 @@ List&lt;String&gt; list2 = list1; // 编译时警告“未经检查的转换”
 <li><p><strong>await操作:</strong></p>
 <ul>
 <li>我们发现 ArrayBlockingQueue 并没有使用 Object.wait ，而是使用的 Condition.await ，这是为么呢？ Condition 对象可以提供和 Object 的 wait 和 notify 一样的行为，但是后者必须先获取synchronized 这个内置的 monitor 锁才能调用，而 Condition 则必须先获取 ReentrantLock 。这两种方式在阻塞等待时都会将相应的锁释放掉，但是 Condition 的等待可以中断，这是二者唯一的区别。</li>
-<li>我们先来看一下 Condition 的 await 函数，await函数的流程大致如下图所示。await函数主要有三个步骤，一是调用 addConditionWaiter 函数，在 condition wait queue 队列中添加一个节点，代表当前线程在等待一个消息。然后调用 fullyRelease 函数，将持有的锁释放掉，调用的是AQS的函数。最后一直调用 isOnSyncQueue 函数判断节点是否被转移到 sync queue 队列上，也就是AQS中等待获取锁的队列。如果没有，则进入阻塞状态，如果已经在队列上，则调用 acquireQueued 函数重新获取锁。<br><img src="/2022/09/12/Java-Basics/2.31_1.png"></li>
+<li>我们先来看一下 Condition 的 await 函数，await函数的流程大致如下图所示。await函数主要有三个步骤，一是调用 addConditionWaiter 函数，在 condition wait queue 队列中添加一个节点，代表当前线程在等待一个消息。然后调用 fullyRelease 函数，将持有的锁释放掉，调用的是AQS的函数。最后一直调用 isOnSyncQueue 函数判断节点是否被转移到 sync queue 队列上，也就是AQS中等待获取锁的队列。如果没有，则进入阻塞状态，如果已经在队列上，则调用 acquireQueued 函数重新获取锁。<br><img src="/2022/09/12/Java%20Basics/2.31_1.png"></li>
 </ul>
 </li>
 <li><p><strong>signal操作:</strong></p>
@@ -1473,7 +1473,7 @@ List&lt;String&gt; list2 = list1; // 编译时警告“未经检查的转换”
 <li>signal 函数将 condition wait queue 队列中队首的线程节点转移等待获取锁的 sync queue 队列中。这样的话， await 函数中调用 isOnSyncQueue 函数就会返回true，导致 await 函数进入最后一步重新获取锁的状态。</li>
 <li>我们这里来详细解析一下 condition wait queue 和 sync queue 两个队列的设计原理。 condition wait queue 是等待消息的队列，因为阻塞队列为空而进入阻塞状态的 take 函数操作就是在等待阻塞队列不为空的消息。而 sync queue 队列则是等待获取锁的队列，take函数获得了消息，就可以运行了，但是它还必须等待获取锁之后才能真正进行运行状态。</li>
 <li>signal 函数其实就做了一件事情，就是不断尝试调用 transferForSignal 函数，将 condition wait queue 队首的一个节点转移到 sync queue 队列中，直到转移成功。因为一次转移成功，就代表这个消息被成功通知到了等待消息的节点。</li>
-<li>signal 函数的示意图如下所示。<br><img src="/2022/09/12/Java-Basics/2.31_2.png"></li>
+<li>signal 函数的示意图如下所示。<br><img src="/2022/09/12/Java%20Basics/2.31_2.png"></li>
 </ul>
 </li>
 </ol>
@@ -1535,7 +1535,7 @@ List&lt;String&gt; list2 = list1; // 编译时警告“未经检查的转换”
 <li>按照<strong>处理功能</strong>，可以将流分为<strong>节点流</strong>和<strong>处理流</strong>，其中节点流可以直接从/向一个特定的IO设备（磁盘、网络等）读/写数据，也称为低级流，而处理流是对节点流的连接或封装，用于简化数据读/写功能或提高效率，也称为高级流。</li>
 </ul>
 </li>
-<li>Java提供了大量的类来支持IO操作，下表给大家整理了其中比较常用的一些类。其中，黑色字体的是抽<br>象基类，其他所有的类都继承自它们。红色字体的是节点流，蓝色字体的是处理流。<br><img src="/2022/09/12/Java-Basics/3.1.png"><br>根据命名很容易理解各个流的作用：<ul>
+<li>Java提供了大量的类来支持IO操作，下表给大家整理了其中比较常用的一些类。其中，黑色字体的是抽<br>象基类，其他所有的类都继承自它们。红色字体的是节点流，蓝色字体的是处理流。<br><img src="/2022/09/12/Java%20Basics/3.1.png"><br>根据命名很容易理解各个流的作用：<ul>
 <li>以File开头的文件流用于访问文件；</li>
 <li>以ByteArray/CharArray开头的流用于访问内存中的数组；</li>
 <li>以Piped开头的管道流用于访问管道，实现进程之间的通信；</li>
@@ -1567,11 +1567,11 @@ List&lt;String&gt; list2 = list1; // 编译时警告“未经检查的转换”
 <li>Buffer对象包含三个重要的属性，分别是<strong>capacity、position、limit</strong>，其中position和limit的含义取决于Buffer处在读模式还是写模式。但不管Buffer处在什么模式，capacity的含义总是一样的。<ul>
 <li><strong>capacity：</strong> 作为一个内存块，Buffer有个固定的最大值，就是capacity。Buffer只能写capacity个数据，一旦Buffer满了，需要将其清空才能继续写数据往里写数据。</li>
 <li><strong>position：</strong> 当写数据到Buffer中时，position表示当前的位置。初始的position值为0。当一个数据写到Buffer后， position会向前移动到下一个可插入数据的Buffer单元。position最大可为capacity–1。当读取数据时，也是从某个特定位置读。当将Buffer从写模式切换到读模式，position会被重置为0。当从Buffer的position处读取数据时，position向前移动到下一个可读的位置。</li>
-<li><strong>limit：</strong> 在写模式下，Buffer的limit表示最多能往Buffer里写多少数据，此时limit等于capacity。当切换Buffer到读模式时， limit表示你最多能读到多少数据，此时limit会被设置成写模式下的position值。<br>三个属性之间的关系如下图所示：<br><img src="/2022/09/12/Java-Basics/3.3_1.png"></li>
+<li><strong>limit：</strong> 在写模式下，Buffer的limit表示最多能往Buffer里写多少数据，此时limit等于capacity。当切换Buffer到读模式时， limit表示你最多能读到多少数据，此时limit会被设置成写模式下的position值。<br>三个属性之间的关系如下图所示：<br><img src="/2022/09/12/Java%20Basics/3.3_1.png"></li>
 </ul>
 </li>
 <li>Selector允许单线程处理多个 Channel，如果你的应用打开了多个连接（通道），但每个连接的流量都很低，使用Selector就会很方便。要使用Selector，得向Selector注册Channel，然后调用它的select()方法。这个方法会一直阻塞到某个注册的通道有事件就绪。一旦这个方法返回，线程就可以处理这些事件，事件例如有新连接进来，数据接收等。</li>
-<li>这是在一个单线程中使用一个Selector处理3个Channel的图示：<br><img src="/2022/09/12/Java-Basics/3.3_2.png"></li>
+<li>这是在一个单线程中使用一个Selector处理3个Channel的图示：<br><img src="/2022/09/12/Java%20Basics/3.3_2.png"></li>
 </ol>
 <p><strong>扩展阅读：</strong></p>
 <ol>
@@ -1818,8 +1818,8 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 </ol>
 <p><strong>扩展阅读：</strong></p>
 <ol>
-<li>操作系统层面线程的5种状态转换关系：<br><img src="/2022/09/12/Java-Basics/4.5_1.png"></li>
-<li>Java线程的5种状态转换关系：<br><img src="/2022/09/12/Java-Basics/4.5_2.png"></li>
+<li>操作系统层面线程的5种状态转换关系：<br><img src="/2022/09/12/Java%20Basics/4.5_1.png"></li>
+<li>Java线程的5种状态转换关系：<br><img src="/2022/09/12/Java%20Basics/4.5_2.png"></li>
 </ol>
 <hr>
 <h4 id="如何实现线程同步"><a href="#如何实现线程同步" class="headerlink" title="如何实现线程同步"></a>如何实现线程同步</h4><p><strong>参考答案：</strong></p>
@@ -1953,7 +1953,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 <ol>
 <li>ReentrantLock 是基于 AQS 实现的， AQS 即 AbstractQueuedSynchronizer 的缩写，这个是个内部实现了两个队列的抽象类，分别是同步队列和条件队列。其中同步队列是一个双向链表，里面储存的是处于等待状态的线程，正在排队等待唤醒去获取锁，而条件队列是一个单向链表，里面储存的也是处于等待状态的线程，只不过这些线程唤醒的结果是加入到了同步队列的队尾， AQS 所做的就是管理这两个队列里面线程之间的等待状态-唤醒的工作。</li>
 <li>在同步队列中，还存在两种模式，分别是独占模式和共享模式，这两种模式的区别就在于 AQS 在唤醒线程节点的时候是不是传递唤醒，这两种模式分别对应独占锁和共享锁。AQS 是一个抽象类，所以不能直接实例化，当我们需要实现一个自定义锁的时候可以去继承 AQS 然后重写获取锁的方式和释放锁的方式还有管理state，而 ReentrantLock 就是通过重写了 AQS 的 tryAcquire 和 tryRelease 方法实现的 lock 和 unlock 。</li>
-<li>ReentrantLock 结构如下图所示：<br><img src="/2022/09/12/Java-Basics/4.16.png"><br>首先 ReentrantLock 实现了 Lock 接口，然后有 3 个内部类，其中 Sync 内部类继承自 AQS ，另外的两个内部类继承自 Sync ，这两个类分别是用来公平锁和非公平锁的。通过 Sync 重写的方法tryAcquire 、 tryRelease 可以知道， ReentrantLock 实现的是 AQS 的独占模式，也就是独占锁，这个锁是悲观锁。</li>
+<li>ReentrantLock 结构如下图所示：<br><img src="/2022/09/12/Java%20Basics/4.16.png"><br>首先 ReentrantLock 实现了 Lock 接口，然后有 3 个内部类，其中 Sync 内部类继承自 AQS ，另外的两个内部类继承自 Sync ，这两个类分别是用来公平锁和非公平锁的。通过 Sync 重写的方法tryAcquire 、 tryRelease 可以知道， ReentrantLock 实现的是 AQS 的独占模式，也就是独占锁，这个锁是悲观锁。</li>
 </ol>
 <hr>
 <h4 id="如果不使用synchronized和Lock，如何保证线程安全"><a href="#如果不使用synchronized和Lock，如何保证线程安全" class="headerlink" title="如果不使用synchronized和Lock，如何保证线程安全"></a>如果不使用synchronized和Lock，如何保证线程安全</h4><p><strong>参考答案：</strong></p>
@@ -1986,7 +1986,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 <ol>
 <li><p>在Java中实现锁的方式有两种，一种是使用Java自带的关键字<strong>synchronized</strong>对相应的类或者方法以及代<br>码块进行加锁，另一种是ReentrantLock，前者只能是非公平锁，而后者是默认非公平但可实现公平的<br>一把锁。</p>
 </li>
-<li><p>ReentrantLock是基于其内部类FairSync(公平锁)和NonFairSync(非公平锁)实现的，并且它的实现依赖<br>于Java同步器框架AbstractQueuedSynchronizer（AQS），AQS使用一个整形的volatile变量state来维<br>护同步状态，这个volatile变量是实现ReentrantLock的关键。我们来看一下ReentrantLock的类图：<br><img src="/2022/09/12/Java-Basics/4.19.png"><br>ReentrantLock 的公平锁和非公平锁都委托了 AbstractQueuedSynchronizer#acquire 去请求获取。</p>
+<li><p>ReentrantLock是基于其内部类FairSync(公平锁)和NonFairSync(非公平锁)实现的，并且它的实现依赖<br>于Java同步器框架AbstractQueuedSynchronizer（AQS），AQS使用一个整形的volatile变量state来维<br>护同步状态，这个volatile变量是实现ReentrantLock的关键。我们来看一下ReentrantLock的类图：<br><img src="/2022/09/12/Java%20Basics/4.19.png"><br>ReentrantLock 的公平锁和非公平锁都委托了 AbstractQueuedSynchronizer#acquire 去请求获取。</p>
 <pre><code class="Java">public final void acquire(int arg) &#123;
     if (!tryAcquire(arg) &amp;&amp;
         acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
@@ -2030,7 +2030,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 <hr>
 <h4 id="Java中的锁升级"><a href="#Java中的锁升级" class="headerlink" title="Java中的锁升级"></a>Java中的锁升级</h4><p><strong>参考答案：</strong></p>
 <ol>
-<li>JDK 1.6之前，synchronized 还是一个重量级锁，是一个效率比较低下的锁。但是在JDK 1.6后，JVM为了提高锁的获取与释放效率对synchronized 进行了优化，引入了偏向锁和轻量级锁 ，从此以后锁的状态就有了四种：无锁、偏向锁、轻量级锁、重量级锁。并且四种状态会随着竞争的情况逐渐升级，而且是不可逆的过程，即不可降级，这四种锁的级别由低到高依次是：无锁、偏向锁，轻量级锁，重量级锁。如下图所示：<br><img src="/2022/09/12/Java-Basics/4.20_1.png"></li>
+<li>JDK 1.6之前，synchronized 还是一个重量级锁，是一个效率比较低下的锁。但是在JDK 1.6后，JVM为了提高锁的获取与释放效率对synchronized 进行了优化，引入了偏向锁和轻量级锁 ，从此以后锁的状态就有了四种：无锁、偏向锁、轻量级锁、重量级锁。并且四种状态会随着竞争的情况逐渐升级，而且是不可逆的过程，即不可降级，这四种锁的级别由低到高依次是：无锁、偏向锁，轻量级锁，重量级锁。如下图所示：<br><img src="/2022/09/12/Java%20Basics/4.20_1.png"></li>
 <li>无锁<br>无锁是指没有对资源进行锁定，所有的线程都能访问并修改同一个资源，但同时只有一个线程能修改成功。无锁的特点是修改操作会在循环内进行，线程会不断的尝试修改共享资源。如果没有冲突就修改成功并退出，否则就会继续循环尝试。如果有多个线程修改同一个值，必定会有一个线程能修改成功，而其他修改失败的线程会不断重试直到修改成功。</li>
 <li>偏向锁<ul>
 <li>初次执行到synchronized代码块的时候，锁对象变成偏向锁（通过CAS修改对象头里的锁标志位），字面意思是“偏向于第一个获得它的线程”的锁。执行完同步代码块后，线程并不会主动释放偏向锁。当第二次到达同步代码块时，线程会判断此时持有锁的线程是否就是自己（持有锁的线程ID也在对象头里），如果是则正常往下执行。由于之前没有释放锁，这里也就不需要重新加锁。如果自始至终使用锁的线程只有一个，很明显偏向锁几乎没有额外开销，性能极高。</li>
@@ -2063,7 +2063,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 <li>Klass Point：对象指向它的类元数据的指针，虚拟机通过这个指针来确定这个对象是哪个类的实例。</li>
 </ul>
 </li>
-<li>那么，synchronized 具体是存在对象头哪里呢？答案是：存在锁对象的对象头的Mark Word中，那么MarkWord在对象头中到底长什么样，它到底存储了什么呢？<br>在32位的虚拟机中：<br><img src="/2022/09/12/Java-Basics/4.20_2.png"><br>在64位虚拟机中：<br><img src="/2022/09/12/Java-Basics/4.20_3.png"><br>下面我们以32位虚拟机为例，来看一下其 Mark Word 的字节具体是如何分配的：<ul>
+<li>那么，synchronized 具体是存在对象头哪里呢？答案是：存在锁对象的对象头的Mark Word中，那么MarkWord在对象头中到底长什么样，它到底存储了什么呢？<br>在32位的虚拟机中：<br><img src="/2022/09/12/Java%20Basics/4.20_2.png"><br>在64位虚拟机中：<br><img src="/2022/09/12/Java%20Basics/4.20_3.png"><br>下面我们以32位虚拟机为例，来看一下其 Mark Word 的字节具体是如何分配的：<ul>
 <li>无锁 ：对象头开辟 25bit 的空间用来存储对象的 hashcode ，4bit 用于存放对象分代年龄，1bit用来存放是否偏向锁的标识位，2bit 用来存放锁标识位为01。</li>
 <li>偏向锁： 在偏向锁中划分更细，还是开辟 25bit 的空间，其中23bit 用来存放线程ID，2bit 用来存放 Epoch，4bit 存放对象分代年龄，1bit 存放是否偏向锁标识， 0表示无锁，1表示偏向锁，锁的标识位还是01。</li>
 <li>轻量级锁：在轻量级锁中直接开辟 30bit 的空间存放指向栈中锁记录的指针，2bit 存放锁的标志位，其标志位为00。重量级锁： 在重量级锁中和轻量级锁一样，30bit 的空间用来存放指向重量级锁的指针，2bit 存放锁的标识位，为11。</li>
@@ -2106,7 +2106,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 </ul>
 </li>
 <li>在某些情况下我们可以将锁分解技术进一步扩展为一组独立对象上的锁进行分解，这称为分段锁。其实说的简单一点就是：容器里有多把锁，每一把锁用于锁容器其中一部分数据，那么当多线程访问容器里不同数据段的数据时，线程间就不会存在锁竞争，从而可以有效的提高并发访问效率，这就是ConcurrentHashMap所使用的锁分段技术，首先将数据分成一段一段的存储，然后给每一段数据配一把锁，当一个线程占用锁访问其中一个段数据的时候，其他段的数据也能被其他线程访问。</li>
-<li>如下图，ConcurrentHashMap使用Segment数据结构，将数据分成一段一段的存储，然后给每一段数据配一把锁，当一个线程占用锁访问其中一个段数据的时候，其他段的数据也能被其他线程访问，能够实现真正的并发访问。所以说，ConcurrentHashMap在并发情况下，不仅保证了线程安全，而且提高了性能。<br><img src="/2022/09/12/Java-Basics/4.22.png"></li>
+<li>如下图，ConcurrentHashMap使用Segment数据结构，将数据分成一段一段的存储，然后给每一段数据配一把锁，当一个线程占用锁访问其中一个段数据的时候，其他段的数据也能被其他线程访问，能够实现真正的并发访问。所以说，ConcurrentHashMap在并发情况下，不仅保证了线程安全，而且提高了性能。<br><img src="/2022/09/12/Java%20Basics/4.22.png"></li>
 </ol>
 <hr>
 <h4 id="读写锁的理解"><a href="#读写锁的理解" class="headerlink" title="读写锁的理解"></a>读写锁的理解</h4><p><strong>参考答案：</strong></p>
@@ -2191,7 +2191,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 <li>ReentrantLock用它来表示锁的持有者线程已经重复获取该锁的次数，而对于非锁的持有者线程来说，如果state大于0，意味着无法获取该锁，将该线程包装为Node，加入到同步等待队列里。Semaphore用它来表示剩余的许可数量，当许可数量为0时，对未获取到许可但正在努力尝试获取许可的线程来说，会进入同步等待队列，阻塞，直到一些线程释放掉持有的许可（state+1），然后争用释放掉的许可。</li>
 <li>FutureTask用它来表示任务的状态（未开始、运行中、完成、取消）。</li>
 <li>ReentrantReadWriteLock在使用时，稍微有些不同，int型state用二进制表示是32位，前16位（高位）表示为读锁，后面的16位（低位）表示为写锁。</li>
-<li>CountDownLatch使用state表示计数次数，state大于0，表示需要加入到同步等待队列并阻塞，直到state等于0，才会逐一唤醒等待队列里的线程。<br>AQS通过内置的FIFO(first-in-first-out)同步队列来控制获取共享资源的线程。CLH队列是FIFO的双端双<br>向队列，AQS的同步机制就是依靠这个CLH队列完成的。队列的每个节点，都有前驱节点指针和后继节<br>点指针。如下图：<br><img src="/2022/09/12/Java-Basics/4.27.png"></li>
+<li>CountDownLatch使用state表示计数次数，state大于0，表示需要加入到同步等待队列并阻塞，直到state等于0，才会逐一唤醒等待队列里的线程。<br>AQS通过内置的FIFO(first-in-first-out)同步队列来控制获取共享资源的线程。CLH队列是FIFO的双端双<br>向队列，AQS的同步机制就是依靠这个CLH队列完成的。队列的每个节点，都有前驱节点指针和后继节<br>点指针。如下图：<br><img src="/2022/09/12/Java%20Basics/4.27.png"></li>
 </ul>
 </li>
 </ol>
@@ -2309,7 +2309,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 <hr>
 <h4 id="线程池的工作流程"><a href="#线程池的工作流程" class="headerlink" title="线程池的工作流程"></a>线程池的工作流程</h4><p><strong>参考答案：</strong></p>
 <ol>
-<li>线程池的工作流程如下图所示：<br><img src="/2022/09/12/Java-Basics/4.32.png"><ul>
+<li>线程池的工作流程如下图所示：<br><img src="/2022/09/12/Java%20Basics/4.32.png"><ul>
 <li>判断核心线程池是否已满，没满则创建一个新的工作线程来执行任务。</li>
 <li>判断任务队列是否已满，没满则将新提交的任务添加在工作队列。</li>
 <li>判断整个线程池是否已满，没满则创建一个新的工作线程来执行任务，已满则执行饱和（拒绝）策略。</li>
@@ -2335,7 +2335,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 </li>
 </ul>
 </li>
-<li><p>下图为线程池的状态转换过程：<br><img src="/2022/09/12/Java-Basics/4.33.png"></p>
+<li><p>下图为线程池的状态转换过程：<br><img src="/2022/09/12/Java%20Basics/4.33.png"></p>
 </li>
 </ol>
 <hr>
@@ -2373,7 +2373,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 <h2 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h2><hr>
 <h4 id="JVM包含那几个部分"><a href="#JVM包含那几个部分" class="headerlink" title="JVM包含那几个部分"></a>JVM包含那几个部分</h4><p><strong>参考答案：</strong></p>
 <ol>
-<li>JVM 主要由四大部分组成：ClassLoader（类加载器），Runtime Data Area（运行时数据区，内存分<br>区），Execution Engine（执行引擎），Native Interface（本地库接口），下图可以大致描述 JVM 的<br>结构。<br><img src="/2022/09/12/Java-Basics/5.1.png"></li>
+<li>JVM 主要由四大部分组成：ClassLoader（类加载器），Runtime Data Area（运行时数据区，内存分<br>区），Execution Engine（执行引擎），Native Interface（本地库接口），下图可以大致描述 JVM 的<br>结构。<br><img src="/2022/09/12/Java%20Basics/5.1.png"></li>
 <li><strong>线程私有</strong>的是：<ul>
 <li>程序计数器</li>
 <li>虚拟机栈</li>
@@ -2413,7 +2413,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 <hr>
 <h4 id="Java程序是怎么运行"><a href="#Java程序是怎么运行" class="headerlink" title="Java程序是怎么运行"></a>Java程序是怎么运行</h4><p><strong>参考答案：</strong></p>
 <ol>
-<li>概括来说，写好的 Java 源代码文件经过 Java 编译器编译成字节码文件后，通过类加载器加载到内存中，才能被实例化，然后到 Java 虚拟机中解释执行，最后通过操作系统操作 CPU 执行获取结果。如下图：<br><img src="/2022/09/12/Java-Basics/5.3.png"></li>
+<li>概括来说，写好的 Java 源代码文件经过 Java 编译器编译成字节码文件后，通过类加载器加载到内存中，才能被实例化，然后到 Java 虚拟机中解释执行，最后通过操作系统操作 CPU 执行获取结果。如下图：<br><img src="/2022/09/12/Java%20Basics/5.3.png"></li>
 </ol>
 <hr>
 <h4 id="本地方法栈的作用"><a href="#本地方法栈的作用" class="headerlink" title="本地方法栈的作用"></a>本地方法栈的作用</h4><p><strong>参考答案：</strong> </p>
@@ -2435,7 +2435,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 <hr>
 <h4 id="说Java的内存分布情况"><a href="#说Java的内存分布情况" class="headerlink" title="说Java的内存分布情况"></a>说Java的内存分布情况</h4><p><strong>参考答案：</strong></p>
 <ol>
-<li><p>Java虚拟机在执行Java程序的过程中会把它所管理的内存划分为若干个不同的数据区域。这些区域有各自的用途，以及创建和销毁的时间，有的区域随着虚拟机进程的启动而一直存在，有些区域则是依赖用户线程的启动和结束而建立和销毁。根据《Java虚拟机规范》的规定，Java虚拟机所管理的内存将会包括以下几个运行时数据区域。<br><img src="/2022/09/12/Java-Basics/5.6.png"></p>
+<li><p>Java虚拟机在执行Java程序的过程中会把它所管理的内存划分为若干个不同的数据区域。这些区域有各自的用途，以及创建和销毁的时间，有的区域随着虚拟机进程的启动而一直存在，有些区域则是依赖用户线程的启动和结束而建立和销毁。根据《Java虚拟机规范》的规定，Java虚拟机所管理的内存将会包括以下几个运行时数据区域。<br><img src="/2022/09/12/Java%20Basics/5.6.png"></p>
 </li>
 <li><p><strong>程序计数器:</strong> 程序计数器（Program Counter Register）是一块较小的内存空间，它可以看作是当前线程所执行的字节码的行号指示器。在Java虚拟机的概念模型里，字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令，它是程序控制流的指示器，分支、循环、跳转、异常处理、线程恢复等基础功能都需要依赖这个计数器来完成。由于Java虚拟机的多线程是通过线程轮流切换、分配处理器执行时间的方式来实现的，在任何一个确定的时刻，一个处理器（对于多核处理器来说是一个内核）都只会执行一条线程中的指令。因此，为了线程切换后能恢复到正确的执行位置，每条线程都需要有一个独立的程序计数器，各条线程之间计数器互不影响，独立存储，我们称这类内存区域为“线程私有”的内存。如果线程正在执行的是一个Java方法，这个计数器记录的是正在执行的虚拟机字节码指令的地址；如果正在执行的是本地（Native）方法，这个计数器值则应为空（Undefined）。此内存区域是唯一一个在《Java虚拟机规范》中没有规定任何OutOfMemoryError情况的区域。</p>
 </li>
@@ -2483,12 +2483,12 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 </li>
 </ul>
 </li>
-<li>上述3个处理过程里，执行插入式注解时又可能会产生新的符号，如果有新的符号产生，就必须转回到之前的解析、填充符号表的过程中重新处理这些新符号，从总体来看，三者之间的关系与交互顺序如图所示。<br><img src="/2022/09/12/Java-Basics/5.9.png"></li>
+<li>上述3个处理过程里，执行插入式注解时又可能会产生新的符号，如果有新的符号产生，就必须转回到之前的解析、填充符号表的过程中重新处理这些新符号，从总体来看，三者之间的关系与交互顺序如图所示。<br><img src="/2022/09/12/Java%20Basics/5.9.png"></li>
 </ol>
 <hr>
 <h4 id="类加载的过程"><a href="#类加载的过程" class="headerlink" title="类加载的过程"></a>类加载的过程</h4><p><strong>参考答案：</strong></p>
 <ol>
-<li><p>一个类型从被加载到虚拟机内存中开始，到卸载出内存为止，它的整个生命周期将会经历加载（Loading）、验证（Verification）、准备（Preparation）、解析（Resolution）、初始化（Initialization）、使用（Using）和卸载（Unloading）七个阶段，其中验证、准备、解析三个部分统称为连接（Linking）。这七个阶段的发生顺序如下图所示。<br><img src="/2022/09/12/Java-Basics/5.10.png"><br>在上述七个阶段中，包括了类加载的全过程，即加载、验证、准备、解析和初始化这五个阶段。</p>
+<li><p>一个类型从被加载到虚拟机内存中开始，到卸载出内存为止，它的整个生命周期将会经历加载（Loading）、验证（Verification）、准备（Preparation）、解析（Resolution）、初始化（Initialization）、使用（Using）和卸载（Unloading）七个阶段，其中验证、准备、解析三个部分统称为连接（Linking）。这七个阶段的发生顺序如下图所示。<br><img src="/2022/09/12/Java%20Basics/5.10.png"><br>在上述七个阶段中，包括了类加载的全过程，即加载、验证、准备、解析和初始化这五个阶段。</p>
 </li>
 <li><p><strong>加载:</strong><br> “加载”（Loading）阶段是整个“类加载”（Class Loading）过程中的一个阶段，在加载阶段，Java虚拟机需要完成以下三件事情：</p>
 <ul>
@@ -2530,7 +2530,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 <li><p>&lt;init&gt;() 方法可以重载多个，类有几个构造器就有几个 <init>() 方法；</init></p>
 </li>
 <li><p>&lt;init&gt;() 方法中的代码执行顺序为：父类变量初始化、父类代码块、父类构造器、子类变量初始化、子类代码块、子类构造器。</p>
-<p>静态变量、静态代码块、普通变量、普通代码块、构造器的执行顺序如下图：<br><img src="/2022/09/12/Java-Basics/5.11_1.png"><br>具有父类的子类的实例化顺序如下：<br><img src="/2022/09/12/Java-Basics/5.11_2.png"></p>
+<p>静态变量、静态代码块、普通变量、普通代码块、构造器的执行顺序如下图：<br><img src="/2022/09/12/Java%20Basics/5.11_1.png"><br>具有父类的子类的实例化顺序如下：<br><img src="/2022/09/12/Java%20Basics/5.11_2.png"></p>
 </li>
 </ul>
 </li>
@@ -2576,7 +2576,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 <li><p><strong>扩展类加载器（Extension Class Loader）：</strong> 这个类加载器是在类sun.misc.Launcher$ExtClassLoader中以Java代码的形式实现的。它负责加载<JAVA_HOME>\lib\ext目录中，或者被java.ext.dirs系统变量所指定的路径中所有的类库。根据“扩展类加载器”这个名称，就可以推断出这是一种Java系统类库的扩展机制，JDK的开发团队允许用户将具有通用性的类库放置在ext目录里以扩展Java SE的功能，在JDK 9之后，这种扩展机制被模块化带来的天然的扩展能力所取代。由于扩展类加载器是由Java代码实现的，开发者可以直接在程序中使用扩展类加载器来加载Class文件。</JAVA_HOME></p>
 </li>
 <li><p><strong>应用程序类加载器（Application Class Loader）：</strong> 这个类加载器由sun.misc.Launcher$AppClassLoader来实现。由于应用程序类加载器是ClassLoader类中的getSystem-ClassLoader()方法的返回值，所以有些场合中也称它为“系统类加载器”。它负责加载用户类路径（ClassPath）上所有的类库，开发者同样可以直接在代码中使用这个类加载器。如果应用程序中没有自定义过自己的类加载器，一般情况下这个就是程序中默认的类加载器。</p>
-<p>这些类加载器之间的协作关系“通常”会如下图所示，图中展示的各种类加载器之间的层次关系被称为类加载器的“双亲委派模型（Parents Delegation Model）”。双亲委派模型要求除了顶层的启动类加载器外，<strong>其余的类加载器都应有自己的父类加载器</strong>。不过这里类加载器之间的父子关系一般不是以继承（Inheritance）的关系来实现的，而是通常使用组合（Composition）关系来复用父加载器的代码。<br><img src="/2022/09/12/Java-Basics/5.13.png"></p>
+<p>这些类加载器之间的协作关系“通常”会如下图所示，图中展示的各种类加载器之间的层次关系被称为类加载器的“双亲委派模型（Parents Delegation Model）”。双亲委派模型要求除了顶层的启动类加载器外，<strong>其余的类加载器都应有自己的父类加载器</strong>。不过这里类加载器之间的父子关系一般不是以继承（Inheritance）的关系来实现的，而是通常使用组合（Composition）关系来复用父加载器的代码。<br><img src="/2022/09/12/Java%20Basics/5.13.png"></p>
 </li>
 </ul>
 </li>
@@ -2672,7 +2672,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 <li><p><strong>怎么定义垃圾：</strong></p>
 <ul>
 <li><strong>引用计数算法：</strong><br>在对象中添加一个引用计数器，每当有一个地方引用它时，计数器值就加一；当引用失效时，计数器值就减一；任何时刻计数器为零的对象就是不可能再被使用的。但是，在Java领域，至少主流的Java虚拟机里面都没有选用引用计数算法来管理内存，主要原因是，这个看似简单的算法有很多例外情况要考虑，必须要配合大量额外处理才能保证正确地工作，譬如单纯的引用计数就很难解决对象之间相互循环引用的问题。举个简单的例子：对象objA和objB都有字段instance，赋值令objA.instance=objB及objB.instance=objA，除此之外，这两个对象再无任何引用，实际上这两个对象已经不可能再被访问，但是它们因为互相引用着对方，导致它们的引用计数都不为零，引用计数算法也就无法回收它们。</li>
-<li><strong>可达性分析算法：</strong><br>当前主流的商用程序语言的内存管理子系统，都是通过可达性分析（Reachability Analysis）算法来判定对象是否存活的。这个算法的基本思路就是通过一系列称为“GC Roots”的根对象作为起始节点集，从这些节点开始，根据引用关系向下搜索，搜索过程所走过的路径称为“引用链”（Reference Chain），如果某个对象到GC Roots间没有任何引用链相连，或者用图论的话来说就是从GC Roots到这个对象不可达时，则证明此对象是不可能再被使用的。<br>如下图所示，对象object 5、object 6、object 7虽然互有关联，但是它们到GC Roots是不可达的，因此它们将会被判定为可回收的对象。<br><img src="/2022/09/12/Java-Basics/5.15_1.png"><br>在Java技术体系里面，固定可作为GC Roots的对象包括以下几种：<ul>
+<li><strong>可达性分析算法：</strong><br>当前主流的商用程序语言的内存管理子系统，都是通过可达性分析（Reachability Analysis）算法来判定对象是否存活的。这个算法的基本思路就是通过一系列称为“GC Roots”的根对象作为起始节点集，从这些节点开始，根据引用关系向下搜索，搜索过程所走过的路径称为“引用链”（Reference Chain），如果某个对象到GC Roots间没有任何引用链相连，或者用图论的话来说就是从GC Roots到这个对象不可达时，则证明此对象是不可能再被使用的。<br>如下图所示，对象object 5、object 6、object 7虽然互有关联，但是它们到GC Roots是不可达的，因此它们将会被判定为可回收的对象。<br><img src="/2022/09/12/Java%20Basics/5.15_1.png"><br>在Java技术体系里面，固定可作为GC Roots的对象包括以下几种：<ul>
 <li>在虚拟机栈（栈帧中的本地变量表）中引用的对象，譬如各个线程被调用的方法堆栈中使用到的参数、局部变量、临时变量等。</li>
 <li>在方法区中类静态属性引用的对象，譬如Java类的引用类型静态变量。</li>
 <li>在方法区中常量引用的对象，譬如字符串常量池（String Table）里的引用。</li>
@@ -2700,11 +2700,11 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 </li>
 </ul>
 </li>
-<li><p><strong>标记-清除算法：</strong><br>最早出现也是最基础的垃圾收集算法是“标记-清除”（Mark-Sweep）算法，如它的名字一样，算法分为“标记”和“清除”两个阶段：首先标记出所有需要回收的对象，在标记完成后，统一回收掉所有被标记的对象，也可以反过来，标记存活的对象，统一回收所有未被标记的对象。它的主要缺点有两个：第一个是执行效率不稳定，如果Java堆中包含大量对象，而且其中大部分是需要被回收的，这时必须进行大量标记和清除的动作，导致标记和清除两个过程的执行效率都随对象数量增长而降低；第二个是内存空间的碎片化问题，标记、清除之后会产生大量不连续的内存碎片，空间碎片太多可能会导致当以后在程序运行过程中需要分配较大对象时无法找到足够的连续内存而不得不提前触发另一次垃圾收集动作。标记-清除算法的执行过程如下图所示。<br><img src="/2022/09/12/Java-Basics/5.15_2.png"></p>
+<li><p><strong>标记-清除算法：</strong><br>最早出现也是最基础的垃圾收集算法是“标记-清除”（Mark-Sweep）算法，如它的名字一样，算法分为“标记”和“清除”两个阶段：首先标记出所有需要回收的对象，在标记完成后，统一回收掉所有被标记的对象，也可以反过来，标记存活的对象，统一回收所有未被标记的对象。它的主要缺点有两个：第一个是执行效率不稳定，如果Java堆中包含大量对象，而且其中大部分是需要被回收的，这时必须进行大量标记和清除的动作，导致标记和清除两个过程的执行效率都随对象数量增长而降低；第二个是内存空间的碎片化问题，标记、清除之后会产生大量不连续的内存碎片，空间碎片太多可能会导致当以后在程序运行过程中需要分配较大对象时无法找到足够的连续内存而不得不提前触发另一次垃圾收集动作。标记-清除算法的执行过程如下图所示。<br><img src="/2022/09/12/Java%20Basics/5.15_2.png"></p>
 </li>
-<li><p><strong>标记-复制算法：</strong><br>为了解决标记-清除算法面对大量可回收对象时执行效率低的问题，1969年Fenichel提出了一种称为“半区复制”（Semispace Copying）的垃圾收集算法，它将可用内存按容量划分为大小相等的两块，每次只使用其中的一块。当这一块的内存用完了，就将还存活着的对象复制到另外一块上面，然后再把已使用过的内存空间一次清理掉。如果内存中多数对象都是存活的，这种算法将会产生大量的内存间复制的开销，但对于多数对象都是可回收的情况，算法需要复制的就是占少数的存活对象，而且每次都是针对整个半区进行内存回收，分配内存时也就不用考虑有空间碎片的复杂情况，只要移动堆顶指针，按顺序分配即可。这样实现简单，运行高效，不过其缺陷也显而易见，这种复制回收算法的代价是将可用内存缩小为了原来的一半，空间浪费未免太多了一点。标记-复制算法的执行过程如下图所示。<br><img src="/2022/09/12/Java-Basics/5.15_3.png"><br>在1989年，Andrew Appel针对具备“朝生夕灭”特点的对象，提出了一种更优化的半区复制分代策略，现在称为“Appel式回收”。Appel式回收的具体做法是把新生代分为一块较大的Eden空间和两块较小的Survivor空间，每次分配内存只使用Eden和其中一块Survivor。发生垃圾搜集时，将Eden和Survivor中仍然存活的对象一次性复制到另外一块Survivor空间上，然后直接清理掉Eden和已用过的那块Survivor空间。HotSpot虚拟机默认Eden和Survivor的大小比例是8∶1，也即每次新生代中可用内存空间为整个新生代容量的90%（Eden的80%加上一个Survivor的10%），只有一个Survivor空间，即10%的新生代是会被“浪费”的。当然，98%的对象可被回收仅仅是“普通场景”下测得的数据，任何人都没有办法百分百保证每次回收都只有不多于10%的对象存活，因此Appel式回收还有一个充当罕见情况的“逃生门”的安全设计，当Survivor空间不足以容纳一次Minor GC之后存活的对象时，就需要依赖其他内存区域（实际上大多就是老年代）进行分配担保（Handle Promotion）。</p>
+<li><p><strong>标记-复制算法：</strong><br>为了解决标记-清除算法面对大量可回收对象时执行效率低的问题，1969年Fenichel提出了一种称为“半区复制”（Semispace Copying）的垃圾收集算法，它将可用内存按容量划分为大小相等的两块，每次只使用其中的一块。当这一块的内存用完了，就将还存活着的对象复制到另外一块上面，然后再把已使用过的内存空间一次清理掉。如果内存中多数对象都是存活的，这种算法将会产生大量的内存间复制的开销，但对于多数对象都是可回收的情况，算法需要复制的就是占少数的存活对象，而且每次都是针对整个半区进行内存回收，分配内存时也就不用考虑有空间碎片的复杂情况，只要移动堆顶指针，按顺序分配即可。这样实现简单，运行高效，不过其缺陷也显而易见，这种复制回收算法的代价是将可用内存缩小为了原来的一半，空间浪费未免太多了一点。标记-复制算法的执行过程如下图所示。<br><img src="/2022/09/12/Java%20Basics/5.15_3.png"><br>在1989年，Andrew Appel针对具备“朝生夕灭”特点的对象，提出了一种更优化的半区复制分代策略，现在称为“Appel式回收”。Appel式回收的具体做法是把新生代分为一块较大的Eden空间和两块较小的Survivor空间，每次分配内存只使用Eden和其中一块Survivor。发生垃圾搜集时，将Eden和Survivor中仍然存活的对象一次性复制到另外一块Survivor空间上，然后直接清理掉Eden和已用过的那块Survivor空间。HotSpot虚拟机默认Eden和Survivor的大小比例是8∶1，也即每次新生代中可用内存空间为整个新生代容量的90%（Eden的80%加上一个Survivor的10%），只有一个Survivor空间，即10%的新生代是会被“浪费”的。当然，98%的对象可被回收仅仅是“普通场景”下测得的数据，任何人都没有办法百分百保证每次回收都只有不多于10%的对象存活，因此Appel式回收还有一个充当罕见情况的“逃生门”的安全设计，当Survivor空间不足以容纳一次Minor GC之后存活的对象时，就需要依赖其他内存区域（实际上大多就是老年代）进行分配担保（Handle Promotion）。</p>
 </li>
-<li><p><strong>标记-整理算法：</strong><br>标记-复制算法在对象存活率较高时就要进行较多的复制操作，效率将会降低。更关键的是，如果不想浪费50%的空间，就需要有额外的空间进行分配担保，以应对被使用的内存中所有对象都100%存活的极端情况，所以在老年代一般不能直接选用这种算法。针对老年代对象的存亡特征，1974年Edward Lueders提出了另外一种有针对性的“标记-整理”（Mark-Compact）算法，其中的标记过程仍然与“标记-清除”算法一样，但后续步骤不是直接对可回收对象进行清理，而是让所有存活的对象都向内存空间一端移动，然后直接清理掉边界以外的内存，“标记-整理”算法的示意图如下图所示。<br><img src="/2022/09/12/Java-Basics/5.15_4.png"></p>
+<li><p><strong>标记-整理算法：</strong><br>标记-复制算法在对象存活率较高时就要进行较多的复制操作，效率将会降低。更关键的是，如果不想浪费50%的空间，就需要有额外的空间进行分配担保，以应对被使用的内存中所有对象都100%存活的极端情况，所以在老年代一般不能直接选用这种算法。针对老年代对象的存亡特征，1974年Edward Lueders提出了另外一种有针对性的“标记-整理”（Mark-Compact）算法，其中的标记过程仍然与“标记-清除”算法一样，但后续步骤不是直接对可回收对象进行清理，而是让所有存活的对象都向内存空间一端移动，然后直接清理掉边界以外的内存，“标记-整理”算法的示意图如下图所示。<br><img src="/2022/09/12/Java%20Basics/5.15_4.png"></p>
 </li>
 </ul>
 </li>
@@ -2789,7 +2789,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 <ol>
 <li>G1（Garbage First）是一款主要面向服务端应用的垃圾收集器，JDK 9发布之日，G1宣告取代ParallelScavenge加Parallel Old组合，成为服务端模式下的默认垃圾收集器，而CMS则沦落至被声明为不推荐使用（Deprecate）的收集器。G1收集器是垃圾收集器技术发展历史上的里程碑式的成果，它开创了收集器面向局部收集的设计思路和基于Region的内存布局形式。</li>
 <li>虽然G1也仍是遵循分代收集理论设计的，但其堆内存的布局与其他收集器有非常明显的差异：G1不再坚持固定大小以及固定数量的分代区域划分，而是把连续的Java堆划分为多个大小相等的独立区域（Region），每一个Region都可以根据需要，扮演新生代的Eden空间、Survivor空间，或者老年代空间。收集器能够对扮演不同角色的Region采用不同的策略去处理，这样无论是新创建的对象还是已经存活了一段时间、熬过多次收集的旧对象都能获取很好的收集效果。</li>
-<li>Region中还有一类特殊的Humongous区域，专门用来存储大对象。G1认为只要大小超过了一个Region容量一半的对象即可判定为大对象。每个Region的大小可以通过参数 -XX：G1HeapRegionSize设定，取值范围为1MB～32MB，且应为2的N次幂。而对于那些超过了整个Region容量的超级大对象，将会被存放在N个连续的 Humongous Region 之中，G1的大多数行为都把 Humongous Region 作为老年代的一部分来进行看待，如下图所示。<br><img src="/2022/09/12/Java-Basics/5.27.png"><br>虽然G1仍然保留新生代和老年代的概念，但新生代和老年代不再是固定的了，它们都是一系列区域（不需要连续）的动态集合。G1收集器之所以能建立可预测的停顿时间模型，是因为它将Region作为单次回收的最小单元，即每次收集到的内存空间都是Region大小的整数倍，这样可以有计划地避免在整个Java堆中进行全区域的垃圾收集。更具体的处理思路是让G1收集器去跟踪各个Region里面的垃圾堆积的“价值”大小，价值即回收所获得的空间大小以及回收所需时间的经验值，然后在后台维护一个优先级列表，每次根据用户设定允许的收集停顿时间（使用参数-XX：MaxGCPauseMillis指定，默认值是200毫秒），优先处理回收价值收益最大的那些Region，这也就是“Garbage First”名字的由来。这种使用Region划分内存空间，以及具有优先级的区域回收方式，保证了G1收集器在有限的时间内获取尽可能高的收集效率。</li>
+<li>Region中还有一类特殊的Humongous区域，专门用来存储大对象。G1认为只要大小超过了一个Region容量一半的对象即可判定为大对象。每个Region的大小可以通过参数 -XX：G1HeapRegionSize设定，取值范围为1MB～32MB，且应为2的N次幂。而对于那些超过了整个Region容量的超级大对象，将会被存放在N个连续的 Humongous Region 之中，G1的大多数行为都把 Humongous Region 作为老年代的一部分来进行看待，如下图所示。<br><img src="/2022/09/12/Java%20Basics/5.27.png"><br>虽然G1仍然保留新生代和老年代的概念，但新生代和老年代不再是固定的了，它们都是一系列区域（不需要连续）的动态集合。G1收集器之所以能建立可预测的停顿时间模型，是因为它将Region作为单次回收的最小单元，即每次收集到的内存空间都是Region大小的整数倍，这样可以有计划地避免在整个Java堆中进行全区域的垃圾收集。更具体的处理思路是让G1收集器去跟踪各个Region里面的垃圾堆积的“价值”大小，价值即回收所获得的空间大小以及回收所需时间的经验值，然后在后台维护一个优先级列表，每次根据用户设定允许的收集停顿时间（使用参数-XX：MaxGCPauseMillis指定，默认值是200毫秒），优先处理回收价值收益最大的那些Region，这也就是“Garbage First”名字的由来。这种使用Region划分内存空间，以及具有优先级的区域回收方式，保证了G1收集器在有限的时间内获取尽可能高的收集效率。</li>
 </ol>
 <hr>
 <h4 id="请介绍CMS垃圾收集器"><a href="#请介绍CMS垃圾收集器" class="headerlink" title="请介绍CMS垃圾收集器"></a>请介绍CMS垃圾收集器</h4><p><strong>参考答案：</strong></p>
@@ -2804,7 +2804,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
 </li>
 <li><p>其中初始标记、重新标记这两个步骤仍然需要“Stop The World”。初始标记仅仅只是标记一下GC Roots能直接关联到的对象，速度很快；并发标记阶段就是从GC Roots的直接关联对象开始遍历整个对象图的过程，这个过程耗时较长但是不需要停顿用户线程，可以与垃圾收集线程一起并发运行；而重新标记阶段则是为了修正并发标记期间，因用户程序继续运作而导致标记产生变动的那一部分对象的标记记录，这个阶段的停顿时间通常会比初始标记阶段稍长一些，但也远比并发标记阶段的时间短；最后是并发清除阶段，清理删除掉标记阶段判断的已经死亡的对象，由于不需要移动存活对象，所以这个阶段也是可以与用户线程同时并发的。由于在整个过程中耗时最长的并发标记和并发清除阶段中，垃圾收集器线程都可以与用户线程一起工作，所以从总体上来说，CMS收集器的内存回收过程是与用户线程一起并发执行的。通过下图可以比较清楚地看到CMS收集器的运作步骤中并发和需要停顿的阶段。</p>
 </li>
-<li><p>由于在整个过程中耗时最长的并发标记和并发清除阶段中，垃圾收集器线程都可以与用户线程一起工作，所以从总体上来说，CMS收集器的内存回收过程是与用户线程一起并发执行的。通过下图可以比较清楚地看到CMS收集器的运作步骤中并发和需要停顿的阶段。<br><img src="/2022/09/12/Java-Basics/5.28.png"></p>
+<li><p>由于在整个过程中耗时最长的并发标记和并发清除阶段中，垃圾收集器线程都可以与用户线程一起工作，所以从总体上来说，CMS收集器的内存回收过程是与用户线程一起并发执行的。通过下图可以比较清楚地看到CMS收集器的运作步骤中并发和需要停顿的阶段。<br><img src="/2022/09/12/Java%20Basics/5.28.png"></p>
 </li>
 <li><p>CMS收集器还远达不到完美的程度，它至少有以下三个明显的缺点：</p>
 <ul>
@@ -2894,7 +2894,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/09/12/Java-Basics/">http://example.com/2022/09/12/Java-Basics/</a>
+                    <a href="http://example.com/2022/09/12/Java%20Basics/">http://example.com/2022/09/12/Java%20Basics/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -3118,7 +3118,7 @@ public class MyCallable implements Callable&lt;String&gt; &#123;
                 <i class="far fa-dot-circle"></i>&nbsp;Current
             </div>
             <div class="card">
-                <a href="/2022/09/12/Java-Basics/">
+                <a href="/2022/09/12/Java%20Basics/">
                     <div class="card-image">
                         
                         
